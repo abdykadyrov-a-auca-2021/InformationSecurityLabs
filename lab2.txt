@@ -1,0 +1,124 @@
+azamat@azamat-VMware20-1:~/Desktop$ cd ~/Desktop
+mkdir lab2-unix
+cd lab2-unix
+azamat@azamat-VMware20-1:~/Desktop/lab2-unix$ sudo nano /usr/local/bin/system_info
+[sudo: authenticate] Password: 
+azamat@azamat-VMware20-1:~/Desktop/lab2-unix$ sudo nano /usr/local/bin/system_info
+--------------------------
+#!/bin/bash
+echo "Hostname: $(hostname)"
+echo "Current User: $(whoami)"
+echo "Disk Space:"
+df -h
+--------------------------
+
+
+azamat@azamat-VMware20-1:~/Desktop/lab2-unix$ sudo chmod +x /usr/local/bin/system_info
+azamat@azamat-VMware20-1:~/Desktop/lab2-unix$ system_info
+Hostname: azamat-VMware20-1
+Current User: azamat
+Disk Space:
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           1.1G  1.8M  1.1G   1% /run
+/dev/nvme0n1p2   39G   12G   25G  32% /
+tmpfs           2.7G     0  2.7G   0% /dev/shm
+efivarfs        256K   33K  224K  13% /sys/firmware/efi/efivars
+tmpfs           5.0M  8.0K  5.0M   1% /run/lock
+tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+tmpfs           1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
+/dev/nvme0n1p1  1.1G  6.6M  1.1G   1% /boot/efi
+tmpfs           2.7G  8.0K  2.7G   1% /tmp
+tmpfs           539M   88K  539M   1% /run/user/1000
+/dev/sr0        4.7G  4.7G     0 100% /media/azamat/Ubuntu 25.10 arm64
+azamat@azamat-VMware20-1:~/Desktop/lab2-unix$ nano greet.sh
+azamat@azamat-VMware20-1:~/Desktop/lab2-unix$ chmod +x greet.sh
+azamat@azamat-VMware20-1:~/Desktop/lab2-unix$ greet.sh
+greet.sh: command not found
+azamat@azamat-VMware20-1:~/Desktop/lab2-unix$ greet
+Command 'greet' not found, did you mean:
+  command 'greetd' from deb greetd (0.10.3-4)
+  command 'greed' from deb greed (4.3-3)
+Try: sudo apt install <deb name>
+azamat@azamat-VMware20-1:~/Desktop/lab2-unix$ ./greet.sh
+Hello, azamat!
+azamat@azamat-VMware20-1:~/Desktop/lab2-unix$ cd ~
+azamat@azamat-VMware20-1:~$ sudo nano /usr/local/bin/greet
+------------------------
+#!/bin/bash
+echo "Hello, $(whoami)!"
+------------------------
+azamat@azamat-VMware20-1:~$ sudo chmod +x /usr/local/bin/greet
+azamat@azamat-VMware20-1:~$ greet
+Hello, azamat!
+azamat@azamat-VMware20-1:~$ sudo nano /usr/local/bin/current_time
+------------------------
+#!/bin/bash
+
+END_HOUR=18
+END_MIN=0
+
+CUR_HOUR=$(date +%H)
+CUR_MIN=$(date +%M)
+
+CUR_TOTAL=$((CUR_HOUR*60 + CUR_MIN))
+END_TOTAL=$((END_HOUR*60 + END_MIN))
+
+REMAIN=$((END_TOTAL - CUR_TOTAL))
+
+if [ $REMAIN -le 0 ]; then
+  echo "Work day is already over"
+else
+  H=$((REMAIN / 60))
+  M=$((REMAIN % 60))
+  echo "Current time: $CUR_HOUR:$CUR_MIN"
+  echo "Work day ends after $H hours and $M minutes"
+fi
+------------------------
+azamat@azamat-VMware20-1:~$ sudo chmod +x /usr/local/bin/current_time
+azamat@azamat-VMware20-1:~$ current_time
+Current time: 10:05
+Work day ends after 7 hours and 55 minutes
+azamat@azamat-VMware20-1:~$ sudo nano /usr/local/bin/count_word
+------------------------
+#!/bin/bash
+
+FILE=$1
+WORD=$2
+
+if [ -z "$FILE" ] || [ -z "$WORD" ]; then
+  echo "Usage: count_word filename word"
+  exit 1
+fi
+
+COUNT=$(grep -o -i "$WORD" "$FILE" | wc -l)
+echo "The word '$WORD' appears $COUNT times in $FILE"
+------------------------
+azamat@azamat-VMware20-1:~$ sudo chmod +x /usr/local/bin/count_word
+azamat@azamat-VMware20-1:~$ echo "hello world hello" > test.txt
+count_word test.txt hello
+The word 'hello' appears 2 times in test.txt
+azamat@azamat-VMware20-1:~$ sudo nano /usr/local/bin/delete_empty_files
+------------------------
+#!/bin/bash
+
+DIR=$1
+
+if [ -z "$DIR" ]; then
+  echo "Usage: delete_empty_files directory"
+  exit 1
+fi
+
+find "$DIR" -type f -empty | while read file; do
+  echo "Deleting $file"
+  rm "$file"
+done
+------------------------
+azamat@azamat-VMware20-1:~$ sudo chmod +x /usr/local/bin/delete_empty_files
+azamat@azamat-VMware20-1:~$ mkdir testdir
+touch testdir/a.txt testdir/b.txt
+delete_empty_files testdir
+Deleting testdir/a.txt
+Deleting testdir/b.txt
+azamat@azamat-VMware20-1:~$ 
+
+
