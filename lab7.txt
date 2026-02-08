@@ -1,0 +1,173 @@
+azamat@azamat-VMware20-1:~/Desktop$ cd /home
+azamat@azamat-VMware20-1:/home$ ls
+azamat  user2
+azamat@azamat-VMware20-1:/home$ sudo touch file.txt
+[sudo: authenticate] Password: 
+azamat@azamat-VMware20-1:/home$ sudo chmod 666 file.txt 
+azamat@azamat-VMware20-1:/home$ sudo nano /home/write_line.sh
+azamat@azamat-VMware20-1:/home$ sudo chmod +x /home/write_line.sh
+azamat@azamat-VMware20-1:/home$ /home/write_line.sh
+azamat@azamat-VMware20-1:/home$ cat /home/file.txt
+New line at Sun Feb  8 19:09:19 +06 2026
+azamat@azamat-VMware20-1:/home$ crontab -e
+no crontab for azamat - using an empty one
+Select an editor.  To change later, run select-editor again.
+  1. /bin/nano        <---- easiest
+  2. /usr/bin/vim.basic
+  3. /usr/bin/vim.tiny
+  4. /bin/ed
+
+Choose 1-4 [1]: 1
+crontab: installing new crontab
+azamat@azamat-VMware20-1:/home$ * * * * * /home/write_line.sh
+azamat: command not found
+azamat@azamat-VMware20-1:/home$ crontab -l
+# Edit this file to introduce tasks to be run by cron.
+# 
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+# 
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').
+# 
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+# 
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+# 
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+# 
+# For more information see the manual pages of crontab(5) and cron(8)
+# 
+# m h  dom mon dow   command
+* * * * * /home/write_line.sh
+azamat@azamat-VMware20-1:/home$ cat /home/file.txt
+New line at Sun Feb  8 19:09:19 +06 2026
+New line at Sun Feb  8 19:11:01 +06 2026
+New line at Sun Feb  8 19:12:01 +06 2026
+New line at Sun Feb  8 19:13:01 +06 2026
+New line at Sun Feb  8 19:14:01 +06 2026
+New line at Sun Feb  8 19:15:01 +06 2026
+New line at Sun Feb  8 19:16:01 +06 2026
+New line at Sun Feb  8 19:17:01 +06 2026
+New line at Sun Feb  8 19:18:01 +06 2026
+New line at Sun Feb  8 19:19:01 +06 2026
+New line at Sun Feb  8 19:20:01 +06 2026
+New line at Sun Feb  8 19:21:01 +06 2026
+New line at Sun Feb  8 19:22:01 +06 2026
+New line at Sun Feb  8 19:23:01 +06 2026
+New line at Sun Feb  8 19:24:01 +06 2026
+New line at Sun Feb  8 19:25:01 +06 2026
+New line at Sun Feb  8 19:26:01 +06 2026
+New line at Sun Feb  8 19:27:02 +06 2026
+New line at Sun Feb  8 19:28:01 +06 2026
+New line at Sun Feb  8 19:29:01 +06 2026
+New line at Sun Feb  8 19:30:01 +06 2026
+New line at Sun Feb  8 19:31:01 +06 2026
+New line at Sun Feb  8 19:32:01 +06 2026
+New line at Sun Feb  8 19:33:01 +06 2026
+New line at Sun Feb  8 19:34:01 +06 2026
+New line at Sun Feb  8 19:35:01 +06 2026
+New line at Sun Feb  8 19:36:01 +06 2026
+New line at Sun Feb  8 19:37:01 +06 2026
+New line at Sun Feb  8 19:38:01 +06 2026
+New line at Sun Feb  8 19:39:01 +06 2026
+New line at Sun Feb  8 19:40:01 +06 2026
+New line at Sun Feb  8 19:41:01 +06 2026
+New line at Sun Feb  8 19:42:01 +06 2026
+New line at Sun Feb  8 19:43:01 +06 2026
+azamat@azamat-VMware20-1:/home$ crontab -r
+azamat@azamat-VMware20-1:/home$ sudo nano /home/system_monitor.py
+################################
+#!/usr/bin/env python3
+import os
+from datetime import datetime
+
+log_file = "/home/system_log.txt"
+
+# Получаем информацию о системе
+disk_usage = os.popen("df -h / | tail -1").read().strip()
+memory = os.popen("free -h | grep Mem").read().strip()
+uptime = os.popen("uptime -p").read().strip()
+
+# Записываем в лог
+with open(log_file, "a") as f:
+    f.write(f"\n=== {datetime.now()} ===\n")
+    f.write(f"Uptime: {uptime}\n")
+    f.write(f"Memory: {memory}\n")
+    f.write(f"Disk: {disk_usage}\n")
+
+print("Log saved!")
+################################
+
+[sudo: authenticate] Password: 
+azamat@azamat-VMware20-1:/home$ sudo chmod +x /home/system_monitor.py
+azamat@azamat-VMware20-1:/home$ crontab -e
+no crontab for azamat - using an empty one
+crontab: installing new crontab
+azamat@azamat-VMware20-1:/home$ cat /home/system_log.txt
+cat: /home/system_log.txt: No such file or directory (os error 2)
+azamat@azamat-VMware20-1:/home$ python3 /home/system_monitor.py
+Traceback (most recent call last):
+  File "/home/system_monitor.py", line 13, in <module>
+    with open(log_file, "a") as f:
+         ~~~~^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/home/system_log.txt'
+azamat@azamat-VMware20-1:/home$ ^C
+azamat@azamat-VMware20-1:/home$ sudo touch /home/system_log.txt
+sudo chmod 666 /home/system_log.txt
+[sudo: authenticate] Password: 
+azamat@azamat-VMware20-1:/home$ python3 /home/system_monitor.py
+Log saved!
+azamat@azamat-VMware20-1:/home$ cat /home/system_log.txt
+
+=== 2026-02-08 20:06:45.490856 ===
+Uptime: up 1 hour, 7 minutes
+Memory: Mem:           5.3Gi       1.2Gi       3.3Gi        26Mi       918Mi       4.1Gi
+Disk: /dev/nvme0n1p2   39G   12G   26G  31% /
+azamat@azamat-VMware20-1:/home$ cat /home/system_log.txt
+
+=== 2026-02-08 20:06:45.490856 ===
+Uptime: up 1 hour, 7 minutes
+Memory: Mem:           5.3Gi       1.2Gi       3.3Gi        26Mi       918Mi       4.1Gi
+Disk: /dev/nvme0n1p2   39G   12G   26G  31% /
+
+=== 2026-02-08 20:07:01.431997 ===
+Uptime: up 1 hour, 7 minutes
+Memory: Mem:           5.3Gi       1.2Gi       3.3Gi        26Mi       919Mi       4.0Gi
+Disk: /dev/nvme0n1p2   39G   12G   26G  31% /
+
+=== 2026-02-08 20:08:01.498034 ===
+Uptime: up 1 hour, 8 minutes
+Memory: Mem:           5.3Gi       1.2Gi       3.3Gi        26Mi       919Mi       4.0Gi
+Disk: /dev/nvme0n1p2   39G   12G   26G  31% /
+
+=== 2026-02-08 20:09:01.555952 ===
+Uptime: up 1 hour, 9 minutes
+Memory: Mem:           5.3Gi       1.2Gi       3.3Gi        26Mi       919Mi       4.0Gi
+Disk: /dev/nvme0n1p2   39G   12G   26G  31% /
+
+=== 2026-02-08 20:10:01.618890 ===
+Uptime: up 1 hour, 10 minutes
+Memory: Mem:           5.3Gi       1.2Gi       3.3Gi        26Mi       919Mi       4.0Gi
+Disk: /dev/nvme0n1p2   39G   12G   26G  31% /
+
+=== 2026-02-08 20:11:01.677705 ===
+Uptime: up 1 hour, 11 minutes
+Memory: Mem:           5.3Gi       1.2Gi       3.3Gi        26Mi       919Mi       4.0Gi
+Disk: /dev/nvme0n1p2   39G   12G   26G  31% /
+
+=== 2026-02-08 20:12:01.727773 ===
+Uptime: up 1 hour, 12 minutes
+Memory: Mem:           5.3Gi       1.2Gi       3.3Gi        20Mi       913Mi       4.1Gi
+Disk: /dev/nvme0n1p2   39G   12G   26G  31% /
+azamat@azamat-VMware20-1:/home$ crontab -r
+azamat@azamat-VMware20-1:/home$ crontab -l
+no crontab for azamat
+azamat@azamat-VMware20-1:/home$ 
+

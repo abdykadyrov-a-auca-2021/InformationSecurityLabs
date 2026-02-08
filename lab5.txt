@@ -1,0 +1,249 @@
+azamat@azamat-VMware20-1:~/Desktop$ sudo adduser user1
+[sudo: authenticate] Password: 
+New password: 
+Retype new password: 
+passwd: password updated successfully
+Changing the user information for user1
+Enter the new value, or press ENTER for the default
+	Full Name []: Familiyev
+	Room Number []: 222
+	Work Phone []: 381092380
+	Home Phone []: 382109
+	Other []: 3182
+Is the information correct? [Y/n] y
+azamat@azamat-VMware20-1:~/Desktop$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+_apt:x:42:65534::/nonexistent:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:998:998:systemd Network Management:/:/usr/sbin/nologin
+dhcpcd:x:100:65534:DHCP Client Daemon:/usr/lib/dhcpcd:/bin/false
+messagebus:x:996:996:System Message Bus:/nonexistent:/usr/sbin/nologin
+syslog:x:101:101::/nonexistent:/usr/sbin/nologin
+systemd-resolve:x:990:990:systemd Resolver:/:/usr/sbin/nologin
+_chrony:x:102:102:Chrony daemon:/var/lib/chrony:/usr/sbin/nologin
+tss:x:103:105:TPM software stack:/var/lib/tpm:/bin/false
+uuidd:x:104:107::/run/uuidd:/usr/sbin/nologin
+systemd-oom:x:989:989:systemd Userspace OOM Killer:/:/usr/sbin/nologin
+whoopsie:x:105:110::/nonexistent:/bin/false
+dnsmasq:x:999:65534:dnsmasq:/var/lib/misc:/usr/sbin/nologin
+avahi:x:106:112:Avahi mDNS daemon:/run/avahi-daemon:/usr/sbin/nologin
+nm-openvpn:x:107:113:NetworkManager OpenVPN:/var/lib/openvpn/chroot:/usr/sbin/nologin
+tcpdump:x:108:114::/nonexistent:/usr/sbin/nologin
+sssd:x:109:115:SSSD system user:/var/lib/sss:/usr/sbin/nologin
+speech-dispatcher:x:110:29:Speech Dispatcher:/run/speech-dispatcher:/bin/false
+usbmux:x:111:46:usbmux daemon:/var/lib/usbmux:/usr/sbin/nologin
+cups-pk-helper:x:112:116:user for cups-pk-helper service:/nonexistent:/usr/sbin/nologin
+fwupd-refresh:x:988:988:Firmware update daemon:/var/lib/fwupd:/usr/sbin/nologin
+saned:x:113:117::/var/lib/saned:/usr/sbin/nologin
+geoclue:x:114:118::/var/lib/geoclue:/usr/sbin/nologin
+cups-browsed:x:115:116::/nonexistent:/usr/sbin/nologin
+pipewire:x:987:987:system user for pipewire:/nonexistent:/usr/sbin/nologin
+hplip:x:116:7:HPLIP system user:/run/hplip:/bin/false
+gnome-remote-desktop:x:986:986:GNOME Remote Desktop:/var/lib/gnome-remote-desktop:/usr/sbin/nologin
+polkitd:x:985:985:User for polkitd:/:/usr/sbin/nologin
+rtkit:x:117:119:RealtimeKit:/proc:/usr/sbin/nologin
+colord:x:118:120:colord colour management daemon:/var/lib/colord:/usr/sbin/nologin
+gnome-initial-setup:x:119:65534::/run/gnome-initial-setup/:/bin/false
+gdm:x:984:984:Gnome Display Manager:/var/lib/gdm3:/bin/false
+azamat:x:1000:1000:Azamat:/home/azamat:/bin/bash
+user1:x:1001:1001:Familiyev,222,381092380,382109,3182:/home/user1:/bin/bash
+azamat@azamat-VMware20-1:~/Desktop$ ls /home/
+azamat  user1
+azamat@azamat-VMware20-1:~/Desktop$ su - user1
+Password: 
+user1@azamat-VMware20-1:~$ whoami
+user1
+user1@azamat-VMware20-1:~$ chfn
+Password: 
+Changing the user information for user1
+Enter the new value, or press ENTER for the default
+	Full Name: Familiyev
+	Room Number [222]: dsadsa                  
+	Work Phone [381092380]: dsad
+	Home Phone [382109]: 11111111111
+user1@azamat-VMware20-1:~$ exit
+logout
+azamat@azamat-VMware20-1:~/Desktop$ sudo pkill -KILL -u user1
+azamat@azamat-VMware20-1:~/Desktop$ sudo deluser --remove-home --force user1
+Unknown option: force
+deluser [--system] [--remove-home] [--remove-all-files] [--backup]
+        [--backup-to dir] [--backup-suffix str] [--conf file]
+        [--quiet] [--verbose] [--debug] user
+
+  remove a regular user from the system
+
+deluser --group [--system] [--only-if-empty] [--conf file] [--quiet]
+        [--verbose] [--debug] group
+delgroup [--system] [--only-if-empty] [--conf file] [--quiet]
+         [--verbose] [--debug] group
+  remove a group from the system
+
+deluser [--conf file] [--quiet] [--verbose] [--debug] user group
+  remove the user from a group
+azamat@azamat-VMware20-1:~/Desktop$ sudo deluser --remove-home user1
+azamat@azamat-VMware20-1:~/Desktop$ cat /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+_apt:x:42:65534::/nonexistent:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:998:998:systemd Network Management:/:/usr/sbin/nologin
+dhcpcd:x:100:65534:DHCP Client Daemon:/usr/lib/dhcpcd:/bin/false
+messagebus:x:996:996:System Message Bus:/nonexistent:/usr/sbin/nologin
+syslog:x:101:101::/nonexistent:/usr/sbin/nologin
+systemd-resolve:x:990:990:systemd Resolver:/:/usr/sbin/nologin
+_chrony:x:102:102:Chrony daemon:/var/lib/chrony:/usr/sbin/nologin
+tss:x:103:105:TPM software stack:/var/lib/tpm:/bin/false
+uuidd:x:104:107::/run/uuidd:/usr/sbin/nologin
+systemd-oom:x:989:989:systemd Userspace OOM Killer:/:/usr/sbin/nologin
+whoopsie:x:105:110::/nonexistent:/bin/false
+dnsmasq:x:999:65534:dnsmasq:/var/lib/misc:/usr/sbin/nologin
+avahi:x:106:112:Avahi mDNS daemon:/run/avahi-daemon:/usr/sbin/nologin
+nm-openvpn:x:107:113:NetworkManager OpenVPN:/var/lib/openvpn/chroot:/usr/sbin/nologin
+tcpdump:x:108:114::/nonexistent:/usr/sbin/nologin
+sssd:x:109:115:SSSD system user:/var/lib/sss:/usr/sbin/nologin
+speech-dispatcher:x:110:29:Speech Dispatcher:/run/speech-dispatcher:/bin/false
+usbmux:x:111:46:usbmux daemon:/var/lib/usbmux:/usr/sbin/nologin
+cups-pk-helper:x:112:116:user for cups-pk-helper service:/nonexistent:/usr/sbin/nologin
+fwupd-refresh:x:988:988:Firmware update daemon:/var/lib/fwupd:/usr/sbin/nologin
+saned:x:113:117::/var/lib/saned:/usr/sbin/nologin
+geoclue:x:114:118::/var/lib/geoclue:/usr/sbin/nologin
+cups-browsed:x:115:116::/nonexistent:/usr/sbin/nologin
+pipewire:x:987:987:system user for pipewire:/nonexistent:/usr/sbin/nologin
+hplip:x:116:7:HPLIP system user:/run/hplip:/bin/false
+gnome-remote-desktop:x:986:986:GNOME Remote Desktop:/var/lib/gnome-remote-desktop:/usr/sbin/nologin
+polkitd:x:985:985:User for polkitd:/:/usr/sbin/nologin
+rtkit:x:117:119:RealtimeKit:/proc:/usr/sbin/nologin
+colord:x:118:120:colord colour management daemon:/var/lib/colord:/usr/sbin/nologin
+gnome-initial-setup:x:119:65534::/run/gnome-initial-setup/:/bin/false
+gdm:x:984:984:Gnome Display Manager:/var/lib/gdm3:/bin/false
+azamat:x:1000:1000:Azamat:/home/azamat:/bin/bash
+azamat@azamat-VMware20-1:~/Desktop$ cat /etc/group
+root:x:0:
+daemon:x:1:
+bin:x:2:
+sys:x:3:
+adm:x:4:syslog,azamat
+tty:x:5:
+disk:x:6:
+lp:x:7:
+mail:x:8:
+news:x:9:
+uucp:x:10:
+man:x:12:
+proxy:x:13:
+kmem:x:15:
+dialout:x:20:
+fax:x:21:
+voice:x:22:
+cdrom:x:24:azamat
+floppy:x:25:
+tape:x:26:
+sudo:x:27:azamat
+audio:x:29:
+dip:x:30:azamat
+www-data:x:33:
+backup:x:34:
+operator:x:37:
+list:x:38:
+irc:x:39:
+src:x:40:
+shadow:x:42:
+utmp:x:43:
+video:x:44:
+sasl:x:45:
+plugdev:x:46:azamat
+staff:x:50:
+games:x:60:
+users:x:100:azamat
+nogroup:x:65534:
+systemd-journal:x:999:
+systemd-network:x:998:
+crontab:x:997:
+messagebus:x:996:
+syslog:x:101:
+input:x:995:
+sgx:x:994:
+clock:x:993:
+kvm:x:992:
+render:x:991:
+systemd-resolve:x:990:
+_chrony:x:102:
+_ssh:x:103:
+scanner:x:104:saned
+tss:x:105:
+ssl-cert:x:106:
+uuidd:x:107:
+systemd-oom:x:989:
+bluetooth:x:108:
+rdma:x:109:
+whoopsie:x:110:
+netdev:x:111:
+avahi:x:112:
+nm-openvpn:x:113:
+tcpdump:x:114:
+sssd:x:115:
+lpadmin:x:116:azamat
+fwupd-refresh:x:988:
+saned:x:117:
+geoclue:x:118:
+pipewire:x:987:
+gnome-remote-desktop:x:986:
+polkitd:x:985:
+rtkit:x:119:
+colord:x:120:
+gdm:x:984:
+lxd:x:121:
+gamemode:x:983:
+gnome-initial-setup:x:982:
+azamat:x:1000:
+azamat@azamat-VMware20-1:~/Desktop$ sudo groupadd developers
+azamat@azamat-VMware20-1:~/Desktop$ cat /etc/group | grep developers
+developers:x:1001:
+azamat@azamat-VMware20-1:~/Desktop$ sudo adduser user2
+New password: 
+Retype new password: 
+passwd: password updated successfully
+Changing the user information for user2
+Enter the new value, or press ENTER for the default
+	Full Name []: asd
+	Room Number []: dsad
+	Work Phone []: sad
+	Home Phone []: dasda
+	Other []: 212
+Is the information correct? [Y/n] y
+azamat@azamat-VMware20-1:~/Desktop$ sudo usermod -aG developers user2
+azamat@azamat-VMware20-1:~/Desktop$ groups user2
+user2 : user2 users developers
+azamat@azamat-VMware20-1:~/Desktop$ sudo deluser --remove-home user2
+sudo groupdel developers
+azamat@azamat-VMware20-1:~/Desktop$ 
+

@@ -1,0 +1,61 @@
+azamat@azamat-VMware20-1:~/Desktop$ cd lab6
+bash: cd: lab6: No such file or directory
+azamat@azamat-VMware20-1:~/Desktop$ mkdir lab6
+azamat@azamat-VMware20-1:~/Desktop$ cd lab6
+azamat@azamat-VMware20-1:~/Desktop/lab6$ touch file.txt
+azamat@azamat-VMware20-1:~/Desktop/lab6$ ls -la file.txt
+-rw-rw-r-- 1 azamat azamat 0 Feb  8 18:42 file.txt
+azamat@azamat-VMware20-1:~/Desktop/lab6$ chmod 754 file.txt
+azamat@azamat-VMware20-1:~/Desktop/lab6$ ls -la file.txt
+-rwxr-xr-- 1 azamat azamat 0 Feb  8 18:42 file.txt
+azamat@azamat-VMware20-1:~/Desktop/lab6$ cat /etc/passwd | grep user2
+cat /etc/group | grep developers
+azamat@azamat-VMware20-1:~/Desktop/lab6$ sudo groupadd developers
+sudo adduser user2
+[sudo: authenticate] Password: 
+New password: 
+Retype new password: 
+passwd: password updated successfully
+Changing the user information for user2
+Enter the new value, or press ENTER for the default
+	Full Name []: ffffffffffff
+	Room Number []: fffffff
+	Work Phone []: fffffff
+	Home Phone []: fffffff
+	Other []: ffffffffff
+Is the information correct? [Y/n] y
+azamat@azamat-VMware20-1:~/Desktop/lab6$ sudo chown user2 file.txt
+ls -la file.txt
+-rwxr-xr-- 1 user2 azamat 0 Feb  8 18:42 file.txt
+azamat@azamat-VMware20-1:~/Desktop/lab6$ sudo chgrp developers file.txt
+ls -la file.txt
+-rwxr-xr-- 1 user2 developers 0 Feb  8 18:42 file.txt
+azamat@azamat-VMware20-1:~/Desktop/lab6$ echo "test" > file.txt
+bash: file.txt: Permission denied
+azamat@azamat-VMware20-1:~/Desktop/lab6$ su - user2
+cd /home/azamat/Desktop/lab6
+echo "hello" > file.txt
+cat file.txt
+Password: 
+su: Authentication failure
+bash: file.txt: Permission denied
+azamat@azamat-VMware20-1:~/Desktop/lab6$ su - user2
+cd /home/azamat/Desktop/lab6
+echo "hello" > file.txt
+cat file.txt
+Password: 
+user2@azamat-VMware20-1:~$ cat file.txt
+cat: file.txt: No such file or directory (os error 2)
+user2@azamat-VMware20-1:~$ cd /home/azamat/Desktop/lab6
+-bash: cd: /home/azamat/Desktop/lab6: Permission denied
+user2@azamat-VMware20-1:~$ exit
+logout
+bash: file.txt: Permission denied
+azamat@azamat-VMware20-1:~/Desktop/lab6$ ^[[200~sudo chown azamat:azamat file.txt
+sudo: command not found
+azamat@azamat-VMware20-1:~/Desktop/lab6$ 
+azamat@azamat-VMware20-1:~/Desktop/lab6$ sudo chown azamat:azamat file.txt
+azamat@azamat-VMware20-1:~/Desktop/lab6$ ls -la file.txt
+-rwxr-xr-- 1 azamat azamat 0 Feb  8 18:42 file.txt
+azamat@azamat-VMware20-1:~/Desktop/lab6$ 
+
