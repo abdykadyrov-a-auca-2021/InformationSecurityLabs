@@ -1,0 +1,33 @@
+azamat@azamat-VMware20-1:~/Desktop$ 
+azamat@azamat-VMware20-1:~/Desktop$ sudo systemctl start nginx
+azamat@azamat-VMware20-1:~/Desktop$ sudo nano /etc/nginx/sites-available/my_site
+azamat@azamat-VMware20-1:~/Desktop$ sudo nano /var/www/html/my_site.html
+azamat@azamat-VMware20-1:~/Desktop$ sudo ln -s /etc/nginx/sites-available/my_site /etc/nginx/sites-enabled/
+azamat@azamat-VMware20-1:~/Desktop$ sudo nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+azamat@azamat-VMware20-1:~/Desktop$ sudo systemctl reload nginx
+azamat@azamat-VMware20-1:~/Desktop$ sudo nano /etc/nginx/sites-available/my_site
+azamat@azamat-VMware20-1:~/Desktop$ sudo nano /etc/nginx/sites-available/my_site
+=====================================
+server {
+    listen 8000;
+    server_name localhost;
+    root /var/www/html;
+    index my_site.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location /api/ {
+        proxy_pass http://localhost:8080/;
+    }
+}
+======================================
+azamat@azamat-VMware20-1:~/Desktop$ sudo nginx -t
+nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+azamat@azamat-VMware20-1:~/Desktop$ sudo systemctl reload nginx
+azamat@azamat-VMware20-1:~/Desktop$ 
+

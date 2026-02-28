@@ -1,0 +1,139 @@
+azamat@azamat-VMware20-1:~/Desktop$ sudo apt update
+[sudo: authenticate] Password: 
+Hit:1 http://ports.ubuntu.com/ubuntu-ports questing InRelease
+Hit:2 http://ports.ubuntu.com/ubuntu-ports questing-updates InRelease
+Hit:3 http://ports.ubuntu.com/ubuntu-ports questing-backports InRelease
+Hit:4 http://ports.ubuntu.com/ubuntu-ports questing-security InRelease
+83 packages can be upgraded. Run 'apt list --upgradable' to see them.
+azamat@azamat-VMware20-1:~/Desktop$ apt search nginx
+anonip/questing 1.1.0-2.1 all
+  Anonymize IP-addresses in log-files
+
+centreon-plugins/questing 0.0~20250303+dfsg-1 all
+  Collection of Nagios plugins to monitor OS, services and network devices
+
+collectd-core/questing 5.12.0-27 arm64
+  statistics collection and monitoring daemon (core system)
+
+crowdsec/questing 1.4.6-10 arm64
+  lightweight and collaborative security engine
+
+diaspora-installer/questing 0.9.0.0+debian2+nmu1build1 all
+  distributed social networking service - installer
+
+diaspora-installer-mysql/questing 0.9.0.0+debian2+nmu1build1 all
+  distributed social networking service - installer (with MySQL)
+
+elpa-nginx-mode/questing 1.1.10-1 all
+  major mode for editing nginx config files
+
+fcgiwrap/questing 1.1.0-16build1 arm64
+  simple server to run CGI applications over FastCGI
+
+gitweb/questing 1:2.51.0-1ubuntu1 all
+  fast, scalable, distributed revision control system (web interface)
+
+golang-github-gorilla-handlers-dev/questing 1.5.2-1 all
+  collection of useful handlers for Go's net/http package
+
+golang-github-hashicorp-hcl-dev/questing 1.0.0-1.1 all
+  Go implementation of HashiCorp Configuration Language
+
+golang-github-hashicorp-hcl-v2-dev/questing 2.14.1-2 all
+  Go implementation of HashiCorp Configuration Language (version 2)
+
+golang-github-nginxinc-nginx-plus-go-client-dev/questing 2.3.0-1 all
+  client for NGINX Plus API for Go (library)
+
+gunicorn/questing 23.0.0-1 all
+  Event-based HTTP/WSGI server
+
+gunicorn-examples/questing 23.0.0-1 all
+  Event-based HTTP/WSGI server (examples)
+
+ledgersmb/questing 1.6.33+ds-2.2ubuntu1 all
+  financial accounting and ERP program
+
+lemonldap-ng-fastcgi-server/questing 2.21.0+ds-3 all
+  Lemonldap::NG FastCGI server
+
+lemonldap-ng-handler/questing 2.21.0+ds-3 all
+  Lemonldap::NG handler part
+
+
+[1]+  Stopped                 apt search nginx
+azamat@azamat-VMware20-1:~/Desktop$ apt-cache depends nginx
+nginx
+  Depends: libc6
+  Depends: libcrypt1
+  Depends: libpcre2-8-0
+  Depends: libssl3t64
+  Depends: zlib1g
+  Depends: nginx-common
+  Breaks: nginx-core
+  Breaks: nginx-extras
+  Breaks: nginx-light
+  Replaces: nginx-core
+  Replaces: nginx-extras
+  Replaces: nginx-light
+azamat@azamat-VMware20-1:~/Desktop$ sudo apt install nginx -y
+Installing:                     
+  nginx
+
+Installing dependencies:
+  nginx-common
+
+Suggested packages:
+  fcgiwrap  nginx-doc
+
+Summary:
+  Upgrading: 0, Installing: 2, Removing: 0, Not Upgrading: 83
+  Download size: 659 kB
+  Space needed: 1,881 kB / 25.7 GB available
+
+Get:1 http://ports.ubuntu.com/ubuntu-ports questing-updates/main arm64 nginx-common all 1.28.0-6ubuntu1.1 [44.8 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports questing-updates/main arm64 nginx arm64 1.28.0-6ubuntu1.1 [614 kB]
+Fetched 659 kB in 1s (557 kB/s)
+Preconfiguring packages ...
+Selecting previously unselected package nginx-common.
+(Reading database ... 201174 files and directories currently installed.)
+Preparing to unpack .../nginx-common_1.28.0-6ubuntu1.1_all.deb ...
+Unpacking nginx-common (1.28.0-6ubuntu1.1) ...
+Selecting previously unselected package nginx.
+Preparing to unpack .../nginx_1.28.0-6ubuntu1.1_arm64.deb ...
+Unpacking nginx (1.28.0-6ubuntu1.1) ...
+Setting up nginx-common (1.28.0-6ubuntu1.1) ...
+Created symlink '/etc/systemd/system/multi-user.target.wants/nginx.service' → '/
+usr/lib/systemd/system/nginx.service'.
+Setting up nginx (1.28.0-6ubuntu1.1) ...
+ * Upgrading binary nginx                                                [ OK ] 
+Processing triggers for man-db (2.13.1-1) ...
+Processing triggers for ufw (0.36.2-9) ...
+azamat@azamat-VMware20-1:~/Desktop$ nginx -v
+nginx version: nginx/1.28.0 (Ubuntu)
+azamat@azamat-VMware20-1:~/Desktop$ sudo systemctl status nginx
+● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: en>
+     Active: active (running) since Sat 2026-02-28 22:40:02 +06; 27s ago
+ Invocation: f1ce14c136644fad81582a253a42d065
+       Docs: man:nginx(8)
+    Process: 3650 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_proce>
+    Process: 3651 ExecStart=/usr/sbin/nginx -g daemon on; master_process on; (c>
+   Main PID: 3686 (nginx)
+      Tasks: 5 (limit: 6354)
+     Memory: 4.2M (peak: 10.4M)
+        CPU: 23ms
+     CGroup: /system.slice/nginx.service
+             ├─3686 "nginx: master process /usr/sbin/nginx -g daemon on; master>
+             ├─3688 "nginx: worker process"
+             ├─3689 "nginx: worker process"
+             ├─3690 "nginx: worker process"
+             └─3691 "nginx: worker process"
+
+Feb 28 22:40:02 azamat-VMware20-1 systemd[1]: Starting nginx.service - A high p>
+Feb 28 22:40:02 azamat-VMware20-1 systemd[1]: Started nginx.service - A high pe>
+lines 1-20/20 (END)
+[2]+  Stopped                 sudo systemctl status nginx
+azamat@azamat-VMware20-1:~/Desktop$ sudo systemctl stop nginx
+azamat@azamat-VMware20-1:~/Desktop$ 
+

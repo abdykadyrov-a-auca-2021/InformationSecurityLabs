@@ -1,0 +1,349 @@
+azamat@azamat-VMware20-1:~/Desktop$ mkdir keylogger
+azamat@azamat-VMware20-1:~/Desktop$ cd keylogger
+touch main.py
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ pip3 install pynput --break-system-packages
+Defaulting to user installation because normal site-packages is not writeable
+Collecting pynput
+  Downloading pynput-1.8.1-py2.py3-none-any.whl.metadata (32 kB)
+Collecting six (from pynput)
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting evdev>=1.3 (from pynput)
+  Downloading evdev-1.9.3.tar.gz (32 kB)
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+Collecting python-xlib>=0.17 (from pynput)
+  Downloading python_xlib-0.33-py2.py3-none-any.whl.metadata (6.2 kB)
+Downloading pynput-1.8.1-py2.py3-none-any.whl (91 kB)
+Downloading python_xlib-0.33-py2.py3-none-any.whl (182 kB)
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Building wheels for collected packages: evdev
+  Building wheel for evdev (pyproject.toml) ... error
+  error: subprocess-exited-with-error
+  
+  × Building wheel for evdev (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [40 lines of output]
+      running bdist_wheel
+      running build
+      running build_py
+      creating build/lib.linux-aarch64-cpython-313/evdev
+      copying src/evdev/util.py -> build/lib.linux-aarch64-cpython-313/evdev
+      copying src/evdev/uinput.py -> build/lib.linux-aarch64-cpython-313/evdev
+      copying src/evdev/genecodes_py.py -> build/lib.linux-aarch64-cpython-313/evdev
+      copying src/evdev/genecodes_c.py -> build/lib.linux-aarch64-cpython-313/evdev
+      copying src/evdev/ff.py -> build/lib.linux-aarch64-cpython-313/evdev
+      copying src/evdev/evtest.py -> build/lib.linux-aarch64-cpython-313/evdev
+      copying src/evdev/events.py -> build/lib.linux-aarch64-cpython-313/evdev
+      copying src/evdev/eventio_async.py -> build/lib.linux-aarch64-cpython-313/evdev
+      copying src/evdev/eventio.py -> build/lib.linux-aarch64-cpython-313/evdev
+      copying src/evdev/ecodes_runtime.py -> build/lib.linux-aarch64-cpython-313/evdev
+      copying src/evdev/ecodes.py -> build/lib.linux-aarch64-cpython-313/evdev
+      copying src/evdev/device.py -> build/lib.linux-aarch64-cpython-313/evdev
+      copying src/evdev/__init__.py -> build/lib.linux-aarch64-cpython-313/evdev
+      running egg_info
+      writing src/evdev.egg-info/PKG-INFO
+      writing dependency_links to src/evdev.egg-info/dependency_links.txt
+      writing top-level names to src/evdev.egg-info/top_level.txt
+      reading manifest file 'src/evdev.egg-info/SOURCES.txt'
+      reading manifest template 'MANIFEST.in'
+      warning: no previously-included files found matching 'src/evdev/ecodes.c'
+      adding license file 'LICENSE'
+      writing manifest file 'src/evdev.egg-info/SOURCES.txt'
+      copying src/evdev/input.c -> build/lib.linux-aarch64-cpython-313/evdev
+      copying src/evdev/py.typed -> build/lib.linux-aarch64-cpython-313/evdev
+      copying src/evdev/uinput.c -> build/lib.linux-aarch64-cpython-313/evdev
+      running build_ext
+      running build_ecodes
+      writing /tmp/pip-install-_b711nav/evdev_68198377dd4d4d4d92515dd6c1b1ed65/src/evdev/ecodes.c (using /usr/include/linux/input.h /usr/include/linux/input-event-codes.h /usr/include/linux/uinput.h)
+      building 'evdev._input' extension
+      creating build/temp.linux-aarch64-cpython-313/src/evdev
+      aarch64-linux-gnu-gcc -fno-strict-overflow -Wsign-compare -DNDEBUG -g -O2 -Wall -fPIC -I/usr/include/python3.13 -c src/evdev/input.c -o build/temp.linux-aarch64-cpython-313/src/evdev/input.o -std=c99 -Wno-error=declaration-after-statement
+      src/evdev/input.c:10:10: fatal error: Python.h: No such file or directory
+         10 | #include <Python.h>
+            |          ^~~~~~~~~~
+      compilation terminated.
+      error: command '/usr/bin/aarch64-linux-gnu-gcc' failed with exit code 1
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building wheel for evdev
+Failed to build evdev
+ERROR: Failed to build installable wheels for some pyproject.toml based projects (evdev)
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ ^C
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ sudo apt install python3-dev -y
+[sudo: authenticate] Password: 
+Upgrading:                      
+  libexpat1
+
+Installing:
+  python3-dev
+
+Installing dependencies:
+  libexpat1-dev   libpython3.13-dev  zlib1g-dev
+  libpython3-dev  python3.13-dev
+
+Summary:
+  Upgrading: 1, Installing: 6, Removing: 0, Not Upgrading: 82
+  Download size: 7,401 kB / 7,484 kB
+  Space needed: 29.2 MB / 25.4 GB available
+
+Get:1 http://ports.ubuntu.com/ubuntu-ports questing-updates/main arm64 libexpat1-dev arm64 2.7.1-2ubuntu0.2 [131 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 zlib1g-dev arm64 1:1.3.dfsg+really1.3.1-1ubuntu2 [899 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports questing-updates/main arm64 libpython3.13-dev arm64 3.13.7-1ubuntu0.3 [5,827 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 libpython3-dev arm64 3.13.7-1 [10.8 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports questing-updates/main arm64 python3.13-dev arm64 3.13.7-1ubuntu0.3 [508 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 python3-dev arm64 3.13.7-1 [26.6 kB]
+Fetched 7,401 kB in 5s (1,503 kB/s)     
+(Reading database ... 201422 files and directories currently installed.)
+Preparing to unpack .../0-libexpat1_2.7.1-2ubuntu0.2_arm64.deb ...
+Unpacking libexpat1:arm64 (2.7.1-2ubuntu0.2) over (2.7.1-2) ...
+Selecting previously unselected package libexpat1-dev:arm64.
+Preparing to unpack .../1-libexpat1-dev_2.7.1-2ubuntu0.2_arm64.deb ...
+Unpacking libexpat1-dev:arm64 (2.7.1-2ubuntu0.2) ...
+Selecting previously unselected package zlib1g-dev:arm64.
+Preparing to unpack .../2-zlib1g-dev_1%3a1.3.dfsg+really1.3.1-1ubuntu2_arm64.deb
+ ...
+Unpacking zlib1g-dev:arm64 (1:1.3.dfsg+really1.3.1-1ubuntu2) ...
+Selecting previously unselected package libpython3.13-dev:arm64.
+Preparing to unpack .../3-libpython3.13-dev_3.13.7-1ubuntu0.3_arm64.deb ...
+Unpacking libpython3.13-dev:arm64 (3.13.7-1ubuntu0.3) ...
+Selecting previously unselected package libpython3-dev:arm64.
+Preparing to unpack .../4-libpython3-dev_3.13.7-1_arm64.deb ...
+Unpacking libpython3-dev:arm64 (3.13.7-1) ...
+Selecting previously unselected package python3.13-dev.
+Preparing to unpack .../5-python3.13-dev_3.13.7-1ubuntu0.3_arm64.deb ...
+Unpacking python3.13-dev (3.13.7-1ubuntu0.3) ...
+Selecting previously unselected package python3-dev.
+Preparing to unpack .../6-python3-dev_3.13.7-1_arm64.deb ...
+Unpacking python3-dev (3.13.7-1) ...
+Setting up libexpat1:arm64 (2.7.1-2ubuntu0.2) ...
+Setting up libexpat1-dev:arm64 (2.7.1-2ubuntu0.2) ...
+Setting up zlib1g-dev:arm64 (1:1.3.dfsg+really1.3.1-1ubuntu2) ...
+Setting up libpython3.13-dev:arm64 (3.13.7-1ubuntu0.3) ...
+Setting up libpython3-dev:arm64 (3.13.7-1) ...
+Setting up python3.13-dev (3.13.7-1ubuntu0.3) ...
+Setting up python3-dev (3.13.7-1) ...
+Processing triggers for man-db (2.13.1-1) ...
+Processing triggers for libc-bin (2.42-0ubuntu3.1) ...
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ pip3 install pynput --break-system-packages
+Defaulting to user installation because normal site-packages is not writeable
+Collecting pynput
+  Using cached pynput-1.8.1-py2.py3-none-any.whl.metadata (32 kB)
+Collecting six (from pynput)
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting evdev>=1.3 (from pynput)
+  Using cached evdev-1.9.3.tar.gz (32 kB)
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+Collecting python-xlib>=0.17 (from pynput)
+  Using cached python_xlib-0.33-py2.py3-none-any.whl.metadata (6.2 kB)
+Using cached pynput-1.8.1-py2.py3-none-any.whl (91 kB)
+Using cached python_xlib-0.33-py2.py3-none-any.whl (182 kB)
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Building wheels for collected packages: evdev
+  Building wheel for evdev (pyproject.toml) ... done
+  Created wheel for evdev: filename=evdev-1.9.3-cp313-cp313-linux_aarch64.whl size=116041 sha256=d8e43438e21c9873df1b9ca60985251ab6548eb552b5850883cc447be485701d
+  Stored in directory: /home/azamat/.cache/pip/wheels/dd/f3/1d/39091e6b23d45838f812a578b1ab9dbed6c57a381c9ad1fd15
+Successfully built evdev
+Installing collected packages: six, evdev, python-xlib, pynput
+Successfully installed evdev-1.9.3 pynput-1.8.1 python-xlib-0.33 six-1.17.0
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ nano main.py
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ python3 main.py
+Start key logging...
+End key logging...            
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ cat log.txt
+cat: log.txt: No such file or directory (os error 2)
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ ^C
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ sudo python3 main.py
+Traceback (most recent call last):
+  File "/home/azamat/Desktop/keylogger/main.py", line 2, in <module>
+    from pynput.keyboard import Key, Listener
+ModuleNotFoundError: No module named 'pynput'
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ sudo pip3 install pynput --break-system-packages
+Collecting pynput
+  Downloading pynput-1.8.1-py2.py3-none-any.whl.metadata (32 kB)
+Collecting six (from pynput)
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting evdev>=1.3 (from pynput)
+  Downloading evdev-1.9.3.tar.gz (32 kB)
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+Collecting python-xlib>=0.17 (from pynput)
+  Downloading python_xlib-0.33-py2.py3-none-any.whl.metadata (6.2 kB)
+Downloading pynput-1.8.1-py2.py3-none-any.whl (91 kB)
+Downloading python_xlib-0.33-py2.py3-none-any.whl (182 kB)
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Building wheels for collected packages: evdev
+  Building wheel for evdev (pyproject.toml) ... done
+  Created wheel for evdev: filename=evdev-1.9.3-cp313-cp313-linux_aarch64.whl size=116040 sha256=1f7c703b25e6244fa6a8234d35194c4c9350b406a9c86e0cb3e341030e7e6b5a
+  Stored in directory: /root/.cache/pip/wheels/dd/f3/1d/39091e6b23d45838f812a578b1ab9dbed6c57a381c9ad1fd15
+Successfully built evdev
+Installing collected packages: six, evdev, python-xlib, pynput
+Successfully installed evdev-1.9.3 pynput-1.8.1 python-xlib-0.33 six-1.17.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ sudo python3 main.py
+Start key logging...
+dsalkdjsalkdaslkdjsakldEnd key logging...        
+asazamat@azamat-VMware20-1:~/Desktop/keylogger$ cat log.txt
+cat: log.txt: No such file or directory (os error 2)
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ ls
+main.py
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ sudo python3 main.py
+Start key logging...
+dmslakndslak
+ ksaljdlk  wjdlksa  hello world
+dasdkjkl d asd das sd sa End key logging...
+asazamat@azamat-VMware20-1:~/Desktop/keylogger$ cat log.txt
+cat: log.txt: No such file or directory (os error 2)
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ sudo ls -la
+total 12
+drwxrwxr-x  2 azamat azamat 4096 Mar  1 00:40 .
+drwxr-xr-x 11 azamat azamat 4096 Mar  1 00:38 ..
+-rw-rw-r--  1 azamat azamat 1553 Mar  1 00:40 main.py
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ nano main.py
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ sudo python3 main.py
+Keylogger started. Press ESC to stop.
+dsakljl sakljdaskl djaskl j
+sakldj kl asjlkd j ajklsjd klas
+^[
+`^[^[sdad
+^[^[^[^CTraceback (most recent call last):
+  File "/home/azamat/Desktop/keylogger/main.py", line 21, in <module>
+    listener.join(timeout=30)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/dist-packages/pynput/_util/__init__.py", line 295, in join
+    super(AbstractListener, self).join(timeout, *args)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/threading.py", line 1094, in join
+    self._handle.join(timeout)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^
+KeyboardInterrupt
+
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ sudo cat log.txt
+cat: log.txt: No such file or directory (os error 2)
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ ls -la
+total 12
+drwxrwxr-x  2 azamat azamat 4096 Mar  1 00:45 .
+drwxr-xr-x 11 azamat azamat 4096 Mar  1 00:38 ..
+-rw-rw-r--  1 azamat azamat  579 Mar  1 00:45 main.py
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ echo $XDG_SESSION_TYPE
+wayland
+
+
+azamat@azamat-VMware20-1:~/Desktop$ cd ~/Desktop/keylogger
+nano main.py
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ python3 main.py
+=== Keylogger Demo ===
+Type text and press Enter. Type 'exit' to quit.
+
+>>> hello world 
+[LOGGED]: hello world 
+>>> password 123
+[LOGGED]: password 123
+>>> exit
+Keylogger stopped. Check log.txt
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ cat log.txt
+hello world 
+password 123
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ nano server.py
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ nano main.py
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ python3 server.py
+Server running on http://localhost:9000
+ * Serving Flask app 'server'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:9000
+Press CTRL+C to quit
+[2026-03-01 00:58:20] Received: hello world
+secret password lsdlas
+127.0.0.1 - - [01/Mar/2026 00:58:20] "POST /logs HTTP/1.1" 200 -
+
+===================================
+from flask import Flask, request, jsonify
+from datetime import datetime
+
+app = Flask(__name__)
+
+@app.route('/logs', methods=['POST'])
+def receive_logs():
+    data = request.get_json()
+    logs = data.get('logs', '')
+    
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
+    with open("received_logs.txt", "a") as f:
+        f.write(f"\n=== {timestamp} ===\n")
+        f.write(logs + "\n")
+    
+    print(f"[{timestamp}] Received: {logs}")
+    return jsonify({"status": "success"}), 200
+
+if __name__ == '__main__':
+    print("Server running on http://localhost:9000")
+    app.run(port=9000)
+
+
+===================================
+import requests
+
+log_file = "log.txt"
+SERVER_URL = "http://localhost:9000/logs"
+all_logs = []
+
+def send_to_server(logs):
+    """Отправляет логи на сервер"""
+    try:
+        response = requests.post(SERVER_URL, json={"logs": logs})
+        if response.status_code == 200:
+            print("[SENT TO SERVER]")
+        else:
+            print("[FAILED TO SEND]")
+    except Exception as e:
+        print(f"[ERROR]: {e}")
+
+print("=== Keylogger Demo ===")
+print("Type text and press Enter. Type 'exit' to quit.\n")
+
+with open(log_file, "w") as f:
+    while True:
+        try:
+            text = input(">>> ")
+            if text.lower() == "exit":
+                # Отправляем все логи на сервер при выходе
+                send_to_server("\n".join(all_logs))
+                break
+            f.write(text + "\n")
+            f.flush()
+            all_logs.append(text)
+            print(f"[LOGGED]: {text}")
+        except KeyboardInterrupt:
+            send_to_server("\n".join(all_logs))
+            break
+
+print("Keylogger stopped. Logs sent to server!")
+===================================
+
+
+azamat@azamat-VMware20-1:~/Desktop/brute-force-server$ cd ~/Desktop/keylogger/
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ python3 main.py
+=== Keylogger Demo ===
+Type text and press Enter. Type 'exit' to quit.
+
+>>> hello world
+[LOGGED]: hello world
+>>> secret password lsdlas
+[LOGGED]: secret password lsdlas
+>>> exit
+[SENT TO SERVER]
+Keylogger stopped. Logs sent to server!
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ cat ~/Desktop/keylogger/received_logs.txt
+
+=== 2026-03-01 00:58:20 ===
+hello world
+secret password lsdlas
+azamat@azamat-VMware20-1:~/Desktop/keylogger$ 
+
+

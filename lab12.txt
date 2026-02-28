@@ -1,0 +1,447 @@
+azamat@azamat-VMware20-1:~/Desktop$ cd ~/Desktop
+mkdir brute-force-server
+azamat@azamat-VMware20-1:~/Desktop$ cd brute-force-server
+python3 -m venv venv
+The virtual environment was not created successfully because ensurepip is not
+available.  On Debian/Ubuntu systems, you need to install the python3-venv
+package using the following command.
+
+    apt install python3.13-venv
+
+You may need to use sudo with that command.  After installing the python3-venv
+package, recreate your virtual environment.
+
+Failing command: /home/azamat/Desktop/brute-force-server/venv/bin/python3
+
+azamat@azamat-VMware20-1:~/Desktop/brute-force-server$ ^C
+azamat@azamat-VMware20-1:~/Desktop/brute-force-server$ sudo apt install python3.13-venv -y
+[sudo: authenticate] Password: 
+Installing:                     
+  python3.13-venv
+
+Installing dependencies:
+  python3-pip-whl  python3-setuptools-whl
+
+Summary:
+  Upgrading: 0, Installing: 3, Removing: 0, Not Upgrading: 83
+  Download size: 2,609 kB
+  Space needed: 2,952 kB / 25.5 GB available
+
+Get:1 http://ports.ubuntu.com/ubuntu-ports questing/universe arm64 python3-pip-whl all 25.1.1+dfsg-1ubuntu2 [1,430 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports questing/universe arm64 python3-setuptools-whl all 78.1.1-0.1 [1,174 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports questing-updates/universe arm64 python3.13-venv arm64 3.13.7-1ubuntu0.3 [5,354 B]
+Fetched 2,609 kB in 3s (821 kB/s)           
+Selecting previously unselected package python3-pip-whl.
+(Reading database ... 201221 files and directories currently installed.)
+Preparing to unpack .../python3-pip-whl_25.1.1+dfsg-1ubuntu2_all.deb ...
+Unpacking python3-pip-whl (25.1.1+dfsg-1ubuntu2) ...
+Selecting previously unselected package python3-setuptools-whl.
+Preparing to unpack .../python3-setuptools-whl_78.1.1-0.1_all.deb ...
+Unpacking python3-setuptools-whl (78.1.1-0.1) ...
+Selecting previously unselected package python3.13-venv.
+Preparing to unpack .../python3.13-venv_3.13.7-1ubuntu0.3_arm64.deb ...
+Unpacking python3.13-venv (3.13.7-1ubuntu0.3) ...
+Setting up python3-setuptools-whl (78.1.1-0.1) ...
+Setting up python3-pip-whl (25.1.1+dfsg-1ubuntu2) ...
+Setting up python3.13-venv (3.13.7-1ubuntu0.3) ...
+azamat@azamat-VMware20-1:~/Desktop/brute-force-server$ python3 -m venv venv
+source venv/bin/activate
+(venv) azamat@azamat-VMware20-1:~/Desktop/brute-force-server$ pip install "fastapi[standard]"
+Collecting fastapi[standard]
+  Downloading fastapi-0.134.0-py3-none-any.whl.metadata (30 kB)
+Collecting starlette>=0.46.0 (from fastapi[standard])
+  Downloading starlette-0.52.1-py3-none-any.whl.metadata (6.3 kB)
+Collecting pydantic>=2.7.0 (from fastapi[standard])
+  Downloading pydantic-2.12.5-py3-none-any.whl.metadata (90 kB)
+Collecting typing-extensions>=4.8.0 (from fastapi[standard])
+  Downloading typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting typing-inspection>=0.4.2 (from fastapi[standard])
+  Downloading typing_inspection-0.4.2-py3-none-any.whl.metadata (2.6 kB)
+Collecting annotated-doc>=0.0.2 (from fastapi[standard])
+  Downloading annotated_doc-0.0.4-py3-none-any.whl.metadata (6.6 kB)
+Collecting fastapi-cli>=0.0.8 (from fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard])
+  Downloading fastapi_cli-0.0.24-py3-none-any.whl.metadata (6.4 kB)
+Collecting httpx<1.0.0,>=0.23.0 (from fastapi[standard])
+  Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+Collecting jinja2>=3.1.5 (from fastapi[standard])
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting python-multipart>=0.0.18 (from fastapi[standard])
+  Downloading python_multipart-0.0.22-py3-none-any.whl.metadata (1.8 kB)
+Collecting email-validator>=2.0.0 (from fastapi[standard])
+  Downloading email_validator-2.3.0-py3-none-any.whl.metadata (26 kB)
+Collecting uvicorn>=0.12.0 (from uvicorn[standard]>=0.12.0; extra == "standard"->fastapi[standard])
+  Downloading uvicorn-0.41.0-py3-none-any.whl.metadata (6.7 kB)
+Collecting pydantic-settings>=2.0.0 (from fastapi[standard])
+  Downloading pydantic_settings-2.13.1-py3-none-any.whl.metadata (3.4 kB)
+Collecting pydantic-extra-types>=2.0.0 (from fastapi[standard])
+  Downloading pydantic_extra_types-2.11.0-py3-none-any.whl.metadata (4.0 kB)
+Collecting anyio (from httpx<1.0.0,>=0.23.0->fastapi[standard])
+  Downloading anyio-4.12.1-py3-none-any.whl.metadata (4.3 kB)
+Collecting certifi (from httpx<1.0.0,>=0.23.0->fastapi[standard])
+  Downloading certifi-2026.2.25-py3-none-any.whl.metadata (2.5 kB)
+Collecting httpcore==1.* (from httpx<1.0.0,>=0.23.0->fastapi[standard])
+  Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Collecting idna (from httpx<1.0.0,>=0.23.0->fastapi[standard])
+  Downloading idna-3.11-py3-none-any.whl.metadata (8.4 kB)
+Collecting h11>=0.16 (from httpcore==1.*->httpx<1.0.0,>=0.23.0->fastapi[standard])
+  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting dnspython>=2.0.0 (from email-validator>=2.0.0->fastapi[standard])
+  Downloading dnspython-2.8.0-py3-none-any.whl.metadata (5.7 kB)
+Collecting typer>=0.16.0 (from fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard])
+  Downloading typer-0.24.1-py3-none-any.whl.metadata (16 kB)
+Collecting rich-toolkit>=0.14.8 (from fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard])
+  Downloading rich_toolkit-0.19.7-py3-none-any.whl.metadata (1.0 kB)
+Collecting fastapi-cloud-cli>=0.1.1 (from fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard])
+  Downloading fastapi_cloud_cli-0.14.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting rignore>=0.5.1 (from fastapi-cloud-cli>=0.1.1->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard])
+  Downloading rignore-0.7.6-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (4.2 kB)
+Collecting sentry-sdk>=2.20.0 (from fastapi-cloud-cli>=0.1.1->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard])
+  Downloading sentry_sdk-2.53.0-py2.py3-none-any.whl.metadata (10 kB)
+Collecting fastar>=0.8.0 (from fastapi-cloud-cli>=0.1.1->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard])
+  Downloading fastar-0.8.0-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (4.0 kB)
+Collecting MarkupSafe>=2.0 (from jinja2>=3.1.5->fastapi[standard])
+  Downloading markupsafe-3.0.3-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (2.7 kB)
+Collecting annotated-types>=0.6.0 (from pydantic>=2.7.0->fastapi[standard])
+  Downloading annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.41.5 (from pydantic>=2.7.0->fastapi[standard])
+  Downloading pydantic_core-2.41.5-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (7.3 kB)
+Collecting python-dotenv>=0.21.0 (from pydantic-settings>=2.0.0->fastapi[standard])
+  Downloading python_dotenv-1.2.1-py3-none-any.whl.metadata (25 kB)
+Collecting click>=8.1.7 (from rich-toolkit>=0.14.8->fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard])
+  Downloading click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting rich>=13.7.1 (from rich-toolkit>=0.14.8->fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard])
+  Downloading rich-14.3.3-py3-none-any.whl.metadata (18 kB)
+Collecting markdown-it-py>=2.2.0 (from rich>=13.7.1->rich-toolkit>=0.14.8->fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard])
+  Downloading markdown_it_py-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich>=13.7.1->rich-toolkit>=0.14.8->fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard])
+  Downloading pygments-2.19.2-py3-none-any.whl.metadata (2.5 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=13.7.1->rich-toolkit>=0.14.8->fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard])
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Collecting urllib3>=1.26.11 (from sentry-sdk>=2.20.0->fastapi-cloud-cli>=0.1.1->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard])
+  Downloading urllib3-2.6.3-py3-none-any.whl.metadata (6.9 kB)
+Collecting shellingham>=1.3.0 (from typer>=0.16.0->fastapi-cli>=0.0.8->fastapi-cli[standard]>=0.0.8; extra == "standard"->fastapi[standard])
+  Downloading shellingham-1.5.4-py2.py3-none-any.whl.metadata (3.5 kB)
+Collecting httptools>=0.6.3 (from uvicorn[standard]>=0.12.0; extra == "standard"->fastapi[standard])
+  Downloading httptools-0.7.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (3.5 kB)
+Collecting pyyaml>=5.1 (from uvicorn[standard]>=0.12.0; extra == "standard"->fastapi[standard])
+  Downloading pyyaml-6.0.3-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (2.4 kB)
+Collecting uvloop>=0.15.1 (from uvicorn[standard]>=0.12.0; extra == "standard"->fastapi[standard])
+  Downloading uvloop-0.22.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (4.9 kB)
+Collecting watchfiles>=0.20 (from uvicorn[standard]>=0.12.0; extra == "standard"->fastapi[standard])
+  Downloading watchfiles-1.1.1-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (4.9 kB)
+Collecting websockets>=10.4 (from uvicorn[standard]>=0.12.0; extra == "standard"->fastapi[standard])
+  Downloading websockets-16.0-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl.metadata (6.8 kB)
+Downloading fastapi-0.134.0-py3-none-any.whl (110 kB)
+Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+Downloading annotated_doc-0.0.4-py3-none-any.whl (5.3 kB)
+Downloading email_validator-2.3.0-py3-none-any.whl (35 kB)
+Downloading dnspython-2.8.0-py3-none-any.whl (331 kB)
+Downloading fastapi_cli-0.0.24-py3-none-any.whl (12 kB)
+Downloading fastapi_cloud_cli-0.14.0-py3-none-any.whl (28 kB)
+Downloading fastar-0.8.0-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (765 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 765.0/765.0 kB 277.2 kB/s eta 0:00:00
+Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading idna-3.11-py3-none-any.whl (71 kB)
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading markupsafe-3.0.3-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (24 kB)
+Downloading pydantic-2.12.5-py3-none-any.whl (463 kB)
+Downloading pydantic_core-2.41.5-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.9/1.9 MB 139.9 kB/s eta 0:00:00
+Downloading annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Downloading pydantic_extra_types-2.11.0-py3-none-any.whl (74 kB)
+Downloading pydantic_settings-2.13.1-py3-none-any.whl (58 kB)
+Downloading python_dotenv-1.2.1-py3-none-any.whl (21 kB)
+Downloading python_multipart-0.0.22-py3-none-any.whl (24 kB)
+Downloading rich_toolkit-0.19.7-py3-none-any.whl (32 kB)
+Downloading click-8.3.1-py3-none-any.whl (108 kB)
+Downloading rich-14.3.3-py3-none-any.whl (310 kB)
+Downloading pygments-2.19.2-py3-none-any.whl (1.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 141.3 kB/s eta 0:00:00
+Downloading markdown_it_py-4.0.0-py3-none-any.whl (87 kB)
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Downloading rignore-0.7.6-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (897 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 897.4/897.4 kB 160.9 kB/s eta 0:00:00
+Downloading sentry_sdk-2.53.0-py2.py3-none-any.whl (437 kB)
+Downloading starlette-0.52.1-py3-none-any.whl (74 kB)
+Downloading anyio-4.12.1-py3-none-any.whl (113 kB)
+Downloading typer-0.24.1-py3-none-any.whl (56 kB)
+Downloading shellingham-1.5.4-py2.py3-none-any.whl (9.8 kB)
+Downloading typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+Downloading typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+Downloading urllib3-2.6.3-py3-none-any.whl (131 kB)
+Downloading uvicorn-0.41.0-py3-none-any.whl (68 kB)
+Downloading httptools-0.7.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (473 kB)
+Downloading pyyaml-6.0.3-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (767 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 767.1/767.1 kB 138.3 kB/s eta 0:00:00
+Downloading uvloop-0.22.1-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (4.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.3/4.3 MB 137.1 kB/s eta 0:00:00
+Downloading watchfiles-1.1.1-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (449 kB)
+Downloading websockets-16.0-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl (186 kB)
+Downloading certifi-2026.2.25-py3-none-any.whl (153 kB)
+Installing collected packages: websockets, uvloop, urllib3, typing-extensions, shellingham, rignore, pyyaml, python-multipart, python-dotenv, pygments, mdurl, MarkupSafe, idna, httptools, h11, fastar, dnspython, click, certifi, annotated-types, annotated-doc, uvicorn, typing-inspection, sentry-sdk, pydantic-core, markdown-it-py, jinja2, httpcore, email-validator, anyio, watchfiles, starlette, rich, pydantic, httpx, typer, rich-toolkit, pydantic-settings, pydantic-extra-types, fastapi, fastapi-cloud-cli, fastapi-cli
+Successfully installed MarkupSafe-3.0.3 annotated-doc-0.0.4 annotated-types-0.7.0 anyio-4.12.1 certifi-2026.2.25 click-8.3.1 dnspython-2.8.0 email-validator-2.3.0 fastapi-0.134.0 fastapi-cli-0.0.24 fastapi-cloud-cli-0.14.0 fastar-0.8.0 h11-0.16.0 httpcore-1.0.9 httptools-0.7.1 httpx-0.28.1 idna-3.11 jinja2-3.1.6 markdown-it-py-4.0.0 mdurl-0.1.2 pydantic-2.12.5 pydantic-core-2.41.5 pydantic-extra-types-2.11.0 pydantic-settings-2.13.1 pygments-2.19.2 python-dotenv-1.2.1 python-multipart-0.0.22 pyyaml-6.0.3 rich-14.3.3 rich-toolkit-0.19.7 rignore-0.7.6 sentry-sdk-2.53.0 shellingham-1.5.4 starlette-0.52.1 typer-0.24.1 typing-extensions-4.15.0 typing-inspection-0.4.2 urllib3-2.6.3 uvicorn-0.41.0 uvloop-0.22.1 watchfiles-1.1.1 websockets-16.0
+(venv) azamat@azamat-VMware20-1:~/Desktop/brute-force-server$ nano main.py
+(venv) azamat@azamat-VMware20-1:~/Desktop/brute-force-server$ fastapi dev main.py
+
+   FastAPI   Starting development server 🚀
+ 
+             Searching for package file structure from directories with         
+             __init__.py files                                                  
+             Importing from /home/azamat/Desktop/brute-force-server
+ 
+    module   🐍 main.py
+ 
+      code   Importing the FastAPI app object from the module with the following
+             code:                                                              
+ 
+             from main import app
+ 
+       app   Using import string: main:app
+ 
+    server   Server started at http://127.0.0.1:8000
+    server   Documentation at http://127.0.0.1:8000/docs
+ 
+       tip   Running in development mode, for production use: fastapi run
+ 
+             Logs:
+ 
+      INFO   Will watch for changes in these directories:                       
+             ['/home/azamat/Desktop/brute-force-server']
+     ERROR   [Errno 98] Address already in use
+
+(venv) azamat@azamat-VMware20-1:~/Desktop/brute-force-server$ deactivate
+azamat@azamat-VMware20-1:~/Desktop/brute-force-server$ 
+
+
+
+
+azamat@azamat-VMware20-1:~/Desktop/btop$ sudo apt update
+sudo apt install hydra -y
+[sudo: authenticate] Password: 
+Hit:1 http://ports.ubuntu.com/ubuntu-ports questing InRelease
+Hit:2 http://ports.ubuntu.com/ubuntu-ports questing-updates InRelease
+Hit:3 http://ports.ubuntu.com/ubuntu-ports questing-backports InRelease
+Hit:4 http://ports.ubuntu.com/ubuntu-ports questing-security InRelease
+83 packages can be upgraded. Run 'apt list --upgradable' to see them.
+Installing:                     
+  hydra
+
+Installing dependencies:
+  firebird4.0-common      libfbclient2        libmysqlclient24  libutf8proc3
+  firebird4.0-common-doc  libhashkit2t64      libpq5            mysql-common
+  libapr1t64              libmemcached11t64   libserf-1-1
+  libaprutil1t64          libmongoc-1.0-0t64  libsvn1
+  libbson-1.0-0t64        libmongocrypt0      libtommath1
+
+Summary:
+  Upgrading: 0, Installing: 18, Removing: 0, Not Upgrading: 83
+  Download size: 6,303 kB
+  Space needed: 23.1 MB / 25.4 GB available
+
+Get:1 http://ports.ubuntu.com/ubuntu-ports questing/universe arm64 firebird4.0-common-doc all 4.0.6.3221.ds6-2 [28.6 kB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports questing/universe arm64 firebird4.0-common all 4.0.6.3221.ds6-2 [18.5 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 libapr1t64 arm64 1.7.5-1 [106 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 libaprutil1t64 arm64 1.6.3-3ubuntu2 [95.1 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports questing/universe arm64 libbson-1.0-0t64 arm64 1.30.4-1ubuntu1 [91.0 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports questing/universe arm64 libtommath1 arm64 1.3.0-1 [59.1 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports questing/universe arm64 libfbclient2 arm64 4.0.6.3221.ds6-2 [935 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 libhashkit2t64 arm64 1.1.4-1.1build4 [15.6 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 libmemcached11t64 arm64 1.1.4-1.1build4 [81.2 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports questing/universe arm64 libmongocrypt0 arm64 1.13.2-1 [1,369 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports questing/universe arm64 libutf8proc3 arm64 2.9.0-1build1 [71.1 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports questing/universe arm64 libmongoc-1.0-0t64 arm64 1.30.4-1ubuntu1 [393 kB]
+Get:13 http://ports.ubuntu.com/ubuntu-ports questing/main arm64 mysql-common all 5.8+1.1.1ubuntu1 [6,922 B]
+Get:14 http://ports.ubuntu.com/ubuntu-ports questing-updates/main arm64 libmysqlclient24 arm64 8.4.8-0ubuntu0.25.10.1 [1,244 kB]
+Get:15 http://ports.ubuntu.com/ubuntu-ports questing-updates/main arm64 libpq5 arm64 17.7-0ubuntu0.25.10.1 [142 kB]
+Get:16 http://ports.ubuntu.com/ubuntu-ports questing/universe arm64 libserf-1-1 arm64 1.3.10-3ubuntu1 [48.7 kB]
+Get:17 http://ports.ubuntu.com/ubuntu-ports questing/universe arm64 libsvn1 arm64 1.14.5-3 [1,339 kB]
+Get:18 http://ports.ubuntu.com/ubuntu-ports questing/universe arm64 hydra arm64 9.5-3build1 [258 kB]
+Fetched 6,303 kB in 3s (1,853 kB/s)
+Selecting previously unselected package firebird4.0-common-doc.
+(Reading database ... 201237 files and directories currently installed.)
+Preparing to unpack .../00-firebird4.0-common-doc_4.0.6.3221.ds6-2_all.deb ...
+Unpacking firebird4.0-common-doc (4.0.6.3221.ds6-2) ...
+Selecting previously unselected package firebird4.0-common.
+Preparing to unpack .../01-firebird4.0-common_4.0.6.3221.ds6-2_all.deb ...
+Unpacking firebird4.0-common (4.0.6.3221.ds6-2) ...
+Selecting previously unselected package libapr1t64:arm64.
+Preparing to unpack .../02-libapr1t64_1.7.5-1_arm64.deb ...
+Unpacking libapr1t64:arm64 (1.7.5-1) ...
+Selecting previously unselected package libaprutil1t64:arm64.
+Preparing to unpack .../03-libaprutil1t64_1.6.3-3ubuntu2_arm64.deb ...
+Unpacking libaprutil1t64:arm64 (1.6.3-3ubuntu2) ...
+Selecting previously unselected package libbson-1.0-0t64.
+Preparing to unpack .../04-libbson-1.0-0t64_1.30.4-1ubuntu1_arm64.deb ...
+Unpacking libbson-1.0-0t64 (1.30.4-1ubuntu1) ...
+Selecting previously unselected package libtommath1:arm64.
+Preparing to unpack .../05-libtommath1_1.3.0-1_arm64.deb ...
+Unpacking libtommath1:arm64 (1.3.0-1) ...
+Selecting previously unselected package libfbclient2:arm64.
+Preparing to unpack .../06-libfbclient2_4.0.6.3221.ds6-2_arm64.deb ...
+Unpacking libfbclient2:arm64 (4.0.6.3221.ds6-2) ...
+Selecting previously unselected package libhashkit2t64:arm64.
+Preparing to unpack .../07-libhashkit2t64_1.1.4-1.1build4_arm64.deb ...
+Unpacking libhashkit2t64:arm64 (1.1.4-1.1build4) ...
+Selecting previously unselected package libmemcached11t64:arm64.
+Preparing to unpack .../08-libmemcached11t64_1.1.4-1.1build4_arm64.deb ...
+Unpacking libmemcached11t64:arm64 (1.1.4-1.1build4) ...
+Selecting previously unselected package libmongocrypt0:arm64.
+Preparing to unpack .../09-libmongocrypt0_1.13.2-1_arm64.deb ...
+Unpacking libmongocrypt0:arm64 (1.13.2-1) ...
+Selecting previously unselected package libutf8proc3:arm64.
+Preparing to unpack .../10-libutf8proc3_2.9.0-1build1_arm64.deb ...
+Unpacking libutf8proc3:arm64 (2.9.0-1build1) ...
+Selecting previously unselected package libmongoc-1.0-0t64.
+Preparing to unpack .../11-libmongoc-1.0-0t64_1.30.4-1ubuntu1_arm64.deb ...
+Unpacking libmongoc-1.0-0t64 (1.30.4-1ubuntu1) ...
+Selecting previously unselected package mysql-common.
+Preparing to unpack .../12-mysql-common_5.8+1.1.1ubuntu1_all.deb ...
+Unpacking mysql-common (5.8+1.1.1ubuntu1) ...
+Selecting previously unselected package libmysqlclient24:arm64.
+Preparing to unpack .../13-libmysqlclient24_8.4.8-0ubuntu0.25.10.1_arm64.deb ...
+Unpacking libmysqlclient24:arm64 (8.4.8-0ubuntu0.25.10.1) ...
+Selecting previously unselected package libpq5:arm64.
+Preparing to unpack .../14-libpq5_17.7-0ubuntu0.25.10.1_arm64.deb ...
+Unpacking libpq5:arm64 (17.7-0ubuntu0.25.10.1) ...
+Selecting previously unselected package libserf-1-1:arm64.
+Preparing to unpack .../15-libserf-1-1_1.3.10-3ubuntu1_arm64.deb ...
+Unpacking libserf-1-1:arm64 (1.3.10-3ubuntu1) ...
+Selecting previously unselected package libsvn1:arm64.
+Preparing to unpack .../16-libsvn1_1.14.5-3_arm64.deb ...
+Unpacking libsvn1:arm64 (1.14.5-3) ...
+Selecting previously unselected package hydra.
+Preparing to unpack .../17-hydra_9.5-3build1_arm64.deb ...
+Unpacking hydra (9.5-3build1) ...
+Setting up mysql-common (5.8+1.1.1ubuntu1) ...
+update-alternatives: using /etc/mysql/my.cnf.fallback to provide /etc/mysql/my.c
+nf (my.cnf) in auto mode
+Setting up libutf8proc3:arm64 (2.9.0-1build1) ...
+Setting up libtommath1:arm64 (1.3.0-1) ...
+Setting up libpq5:arm64 (17.7-0ubuntu0.25.10.1) ...
+Setting up firebird4.0-common-doc (4.0.6.3221.ds6-2) ...
+Setting up libmysqlclient24:arm64 (8.4.8-0ubuntu0.25.10.1) ...
+Setting up firebird4.0-common (4.0.6.3221.ds6-2) ...
+Configuring /etc/firebird/4.0/service-port.conf to use port 3050
+Setting up libapr1t64:arm64 (1.7.5-1) ...
+Setting up libhashkit2t64:arm64 (1.1.4-1.1build4) ...
+Setting up libbson-1.0-0t64 (1.30.4-1ubuntu1) ...
+Setting up libmongocrypt0:arm64 (1.13.2-1) ...
+Setting up libaprutil1t64:arm64 (1.6.3-3ubuntu2) ...
+Setting up libserf-1-1:arm64 (1.3.10-3ubuntu1) ...
+Setting up libmemcached11t64:arm64 (1.1.4-1.1build4) ...
+Setting up libfbclient2:arm64 (4.0.6.3221.ds6-2) ...
+Setting up libmongoc-1.0-0t64 (1.30.4-1ubuntu1) ...
+Setting up libsvn1:arm64 (1.14.5-3) ...
+Setting up hydra (9.5-3build1) ...
+Processing triggers for man-db (2.13.1-1) ...
+Processing triggers for libc-bin (2.42-0ubuntu3.1) ...
+azamat@azamat-VMware20-1:~/Desktop/btop$ cd ~/Desktop/brute-force-server
+azamat@azamat-VMware20-1:~/Desktop/brute-force-server$ nano usernames.txt
+azamat@azamat-VMware20-1:~/Desktop/brute-force-server$ nano passwords.txt
+azamat@azamat-VMware20-1:~/Desktop/brute-force-server$ hydra -f -I -V -L usernames.txt -P passwords.txt -s 8000 localhost http-post-form "/login:username=^USER^&password=^PASS^:F=Invalid"
+Hydra v9.5 (c) 2023 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2026-02-28 23:25:46
+[DATA] max 16 tasks per 1 server, overall 16 tasks, 42 login tries (l:6/p:7), ~3 tries per task
+[DATA] attacking http-post-form://localhost:8000/login:username=^USER^&password=^PASS^:F=Invalid
+[ATTEMPT] target localhost - login "root" - pass "password" - 1 of 42 [child 0] (0/0)
+[ATTEMPT] target localhost - login "root" - pass "123456" - 2 of 42 [child 1] (0/0)
+[ATTEMPT] target localhost - login "root" - pass "admin" - 3 of 42 [child 2] (0/0)
+[ATTEMPT] target localhost - login "root" - pass "qwerty" - 4 of 42 [child 3] (0/0)
+[ATTEMPT] target localhost - login "root" - pass "12345admin" - 5 of 42 [child 4] (0/0)
+[ATTEMPT] target localhost - login "root" - pass "letmein" - 6 of 42 [child 5] (0/0)
+[ATTEMPT] target localhost - login "root" - pass "password123" - 7 of 42 [child 6] (0/0)
+[ATTEMPT] target localhost - login "admin" - pass "password" - 8 of 42 [child 7] (0/0)
+[ATTEMPT] target localhost - login "admin" - pass "123456" - 9 of 42 [child 8] (0/0)
+[ATTEMPT] target localhost - login "admin" - pass "admin" - 10 of 42 [child 9] (0/0)
+[ATTEMPT] target localhost - login "admin" - pass "qwerty" - 11 of 42 [child 10] (0/0)
+[ATTEMPT] target localhost - login "admin" - pass "12345admin" - 12 of 42 [child 11] (0/0)
+[ATTEMPT] target localhost - login "admin" - pass "letmein" - 13 of 42 [child 12] (0/0)
+[ATTEMPT] target localhost - login "admin" - pass "password123" - 14 of 42 [child 13] (0/0)
+[ATTEMPT] target localhost - login "user" - pass "password" - 15 of 42 [child 14] (0/0)
+[ATTEMPT] target localhost - login "user" - pass "123456" - 16 of 42 [child 15] (0/0)
+[ATTEMPT] target localhost - login "user" - pass "admin" - 17 of 42 [child 0] (0/0)
+[ATTEMPT] target localhost - login "user" - pass "qwerty" - 18 of 42 [child 1] (0/0)
+[ATTEMPT] target localhost - login "user" - pass "12345admin" - 19 of 42 [child 2] (0/0)
+[ATTEMPT] target localhost - login "user" - pass "letmein" - 20 of 42 [child 3] (0/0)
+[ATTEMPT] target localhost - login "user" - pass "password123" - 21 of 42 [child 4] (0/0)
+[ATTEMPT] target localhost - login "test" - pass "password" - 22 of 42 [child 5] (0/0)
+[ATTEMPT] target localhost - login "test" - pass "123456" - 23 of 42 [child 7] (0/0)
+[ATTEMPT] target localhost - login "test" - pass "admin" - 24 of 42 [child 6] (0/0)
+[ATTEMPT] target localhost - login "test" - pass "qwerty" - 25 of 42 [child 8] (0/0)
+[ATTEMPT] target localhost - login "test" - pass "12345admin" - 26 of 42 [child 9] (0/0)
+[ATTEMPT] target localhost - login "test" - pass "letmein" - 27 of 42 [child 10] (0/0)
+[ATTEMPT] target localhost - login "test" - pass "password123" - 28 of 42 [child 11] (0/0)
+[ATTEMPT] target localhost - login "guest" - pass "password" - 29 of 42 [child 12] (0/0)
+[ATTEMPT] target localhost - login "guest" - pass "123456" - 30 of 42 [child 13] (0/0)
+[ATTEMPT] target localhost - login "guest" - pass "admin" - 31 of 42 [child 14] (0/0)
+[ATTEMPT] target localhost - login "guest" - pass "qwerty" - 32 of 42 [child 15] (0/0)
+[ATTEMPT] target localhost - login "guest" - pass "12345admin" - 33 of 42 [child 0] (0/0)
+[ATTEMPT] target localhost - login "guest" - pass "letmein" - 34 of 42 [child 3] (0/0)
+[ATTEMPT] target localhost - login "guest" - pass "password123" - 35 of 42 [child 5] (0/0)
+[ATTEMPT] target localhost - login "administrator" - pass "password" - 36 of 42 [child 7] (0/0)
+[ATTEMPT] target localhost - login "administrator" - pass "123456" - 37 of 42 [child 1] (0/0)
+[ATTEMPT] target localhost - login "administrator" - pass "admin" - 38 of 42 [child 2] (0/0)
+[ATTEMPT] target localhost - login "administrator" - pass "qwerty" - 39 of 42 [child 4] (0/0)
+[ATTEMPT] target localhost - login "administrator" - pass "12345admin" - 40 of 42 [child 6] (0/0)
+[ATTEMPT] target localhost - login "administrator" - pass "letmein" - 41 of 42 [child 8] (0/0)
+[ATTEMPT] target localhost - login "administrator" - pass "password123" - 42 of 42 [child 9] (0/0)
+1 of 1 target completed, 0 valid password found
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2026-02-28 23:25:47
+
+azamat@azamat-VMware20-1:~/Desktop/brute-force-server$ git clone https://github.com/Mebus/cupp.git
+cd cupp
+python3 cupp.py -i
+Cloning into 'cupp'...
+remote: Enumerating objects: 261, done.
+remote: Counting objects: 100% (95/95), done.
+remote: Compressing objects: 100% (26/26), done.
+remote: Total 261 (delta 84), reused 69 (delta 69), pack-reused 166 (from 2)
+Receiving objects: 100% (261/261), 2.16 MiB | 127.00 KiB/s, done.
+Resolving deltas: 100% (142/142), done.
+ ___________ 
+   cupp.py!                 # Common
+      \                     # User
+       \   ,__,             # Passwords
+        \  (oo)____         # Profiler
+           (__)    )\   
+              ||--|| *      [ Muris Kurgas | j0rgan@remote-exploit.org ]
+                            [ Mebus | https://github.com/Mebus/]
+
+
+[+] Insert the information about the victim to make a dictionary
+[+] If you don't know all the info, just hit enter when asked! ;)
+
+> First Name: Azamat
+> Surname: Abdykadyrov
+> Nickname: AbdyAzamat
+> Birthdate (DDMMYYYY): 06092003
+
+
+> Partners) name: 
+> Partners) nickname: 
+> Partners) birthdate (DDMMYYYY): 
+
+
+> Child's name: 
+> Child's nickname: 
+> Child's birthdate (DDMMYYYY): 
+
+
+> Pet's name: 
+> Company name: 
+
+
+> Do you want to add some key words about the victim? Y/[N]: 
+> Do you want to add special chars at the end of words? Y/[N]: 
+> Do you want to add some random numbers at the end of words? Y/[N]:
+> Leet mode? (i.e. leet = 1337) Y/[N]: 
+
+[+] Now making a dictionary...
+[+] Sorting list and removing duplicates...
+[+] Saving dictionary to azamat.txt, counting 1226 words.
+> Hyperspeed Print? (Y/n) : 
+[+] Now load your pistolero with azamat.txt and shoot! Good luck!
+azamat@azamat-VMware20-1:~/Desktop/brute-force-server/cupp$ 
+

@@ -1,0 +1,183 @@
+azamat@azamat-VMware20-1:~/Desktop$ sudo apt update
+sudo apt install git make -y
+[sudo: authenticate] Password: 
+Hit:1 http://ports.ubuntu.com/ubuntu-ports questing InRelease
+Hit:2 http://ports.ubuntu.com/ubuntu-ports questing-updates InRelease
+Hit:3 http://ports.ubuntu.com/ubuntu-ports questing-backports InRelease
+Hit:4 http://ports.ubuntu.com/ubuntu-ports questing-security InRelease
+83 packages can be upgraded. Run 'apt list --upgradable' to see them.
+git is already the newest version (1:2.51.0-1ubuntu1).
+make is already the newest version (4.4.1-2).
+make set to manually installed.
+Summary:                    
+  Upgrading: 0, Installing: 0, Removing: 0, Not Upgrading: 83
+azamat@azamat-VMware20-1:~/Desktop$ cd ~/Desktop
+git clone https://github.com/dylanaraps/neofetch.git
+Cloning into 'neofetch'...
+remote: Enumerating objects: 16689, done.
+remote: Counting objects: 100% (2117/2117), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 16689 (delta 2113), reused 2110 (delta 2110), pack-reused 14572 (from 1)
+Receiving objects: 100% (16689/16689), 7.21 MiB | 138.00 KiB/s, done.
+Resolving deltas: 100% (10149/10149), done.
+azamat@azamat-VMware20-1:~/Desktop$ cd neofetch
+azamat@azamat-VMware20-1:~/Desktop/neofetch$ sudo make install
+azamat@azamat-VMware20-1:~/Desktop/neofetch$ neofetch
+            .-/+oossssoo+\-.               azamat@azamat-VMware20-1 
+        ´:+ssssssssssssssssss+:`           ------------------------ 
+      -+ssssssssssssssssssyyssss+-         OS: Ubuntu 25.10 aarch64 
+    .ossssssssssssssssssdMMMNysssso.       Host: VMware, Inc. VBSA 
+   /ssssssssssshdmmNNmmyNMMMMhssssss\      Kernel: 6.17.0-12-generic 
+  +ssssssssshmydMMMMMMMNddddyssssssss+     Uptime: 28 mins 
+ /sssssssshNMMMyhhyyyyhmNMMMNhssssssss\    Packages: 1677 (dpkg), 10 (snap) 
+.ssssssssdMMMNhsssssssssshNMMMdssssssss.   Shell: bash 5.2.37 
++sssshhhyNMMNyssssssssssssyNMMMysssssss+   Resolution: 1280x762 
+ossyNMMMNyMMhsssssssssssssshmmmhssssssso   DE: GNOME 49.0 (Wayland) 
+ossyNMMMNyMMhsssssssssssssshmmmhssssssso   WM: Mutter 
++sssshhhyNMMNyssssssssssssyNMMMysssssss+   WM Theme: Adwaita 
+.ssssssssdMMMNhsssssssssshNMMMdssssssss.   Theme: Yaru [GTK2/3] 
+ \sssssssshNMMMyhhyyyyhdNMMMNhssssssss/    Icons: Yaru [GTK2/3] 
+  +sssssssssdmydMMMMMMMMddddyssssssss+     Terminal: ptyxis-agent 
+   \ssssssssssshdmNNNNmyNMMMMhssssss/      CPU: (4) 
+    .ossssssssssssssssssdMMMNysssso.       GPU: VMware Fusion) 
+      -+sssssssssssssssssyyyssss+-         Memory: 1789MiB / 5389MiB 
+        `:+ssssssssssssssssss+:`
+            .-\+oossssoo+/-.                                       
+                                                                   
+
+azamat@azamat-VMware20-1:~/Desktop/neofetch$ sudo apt install python3 python3-pip -y
+python3 is already the newest version (3.13.7-1).
+python3 set to manually installed.
+python3-pip is already the newest version (25.1.1+dfsg-1ubuntu2).
+Summary:                    
+  Upgrading: 0, Installing: 0, Removing: 0, Not Upgrading: 83
+azamat@azamat-VMware20-1:~/Desktop/neofetch$ cd ~/Desktop
+git clone https://github.com/yt-dlp/yt-dlp.git
+Cloning into 'yt-dlp'...
+remote: Enumerating objects: 131352, done.
+remote: Counting objects: 100% (43/43), done.
+remote: Compressing objects: 100% (37/37), done.
+remote: Total 131352 (delta 25), reused 6 (delta 6), pack-reused 131309 (from 3)
+Receiving objects: 100% (131352/131352), 58.95 MiB | 115.00 KiB/s, done.
+Resolving deltas: 100% (102685/102685), done.
+azamat@azamat-VMware20-1:~/Desktop$ cd yt-dlp
+sudo python3 setup.py install --break-system-packages
+python3: can't open file '/home/azamat/Desktop/yt-dlp/setup.py': [Errno 2] No such file or directory
+azamat@azamat-VMware20-1:~/Desktop/yt-dlp$ ls
+CONTRIBUTING.md  Makefile                  public.key         yt-dlp.sh
+CONTRIBUTORS     README.md                 pyproject.toml     yt_dlp
+Changelog.md     THIRD_PARTY_LICENSES.txt  supportedsites.md
+LICENSE          bundle                    test
+Maintainers.md   devscripts                yt-dlp.cmd
+azamat@azamat-VMware20-1:~/Desktop/yt-dlp$ sudo make install
+/usr/bin/env python3 devscripts/make_lazy_extractors.py yt_dlp/extractor/lazy_extractors.py
+mkdir -p zip
+for d in yt_dlp yt_dlp/compat yt_dlp/compat/urllib yt_dlp/dependencies yt_dlp/downloader yt_dlp/extractor yt_dlp/extractor/youtube yt_dlp/extractor/youtube/jsc yt_dlp/extractor/youtube/jsc/_builtin yt_dlp/extractor/youtube/jsc/_builtin/vendor yt_dlp/extractor/youtube/pot yt_dlp/extractor/youtube/pot/_builtin yt_dlp/networking yt_dlp/postprocessor yt_dlp/utils yt_dlp/utils/jslib ; do \
+  mkdir -p zip/$d ;\
+  cp -pPR $d/*.py zip/$d/ ;\
+done
+for d in yt_dlp/extractor/youtube/jsc/_builtin/vendor ; do \
+  mkdir -p zip/$d ;\
+  cp -pPR $d/*.js zip/$d/ ;\
+done
+(cd zip && touch -t 200001010101 yt_dlp/*.py yt_dlp/compat/*.py yt_dlp/compat/urllib/*.py yt_dlp/dependencies/*.py yt_dlp/downloader/*.py yt_dlp/extractor/*.py yt_dlp/extractor/youtube/*.py yt_dlp/extractor/youtube/jsc/*.py yt_dlp/extractor/youtube/jsc/_builtin/*.py yt_dlp/extractor/youtube/jsc/_builtin/vendor/*.py yt_dlp/extractor/youtube/pot/*.py yt_dlp/extractor/youtube/pot/_builtin/*.py yt_dlp/networking/*.py yt_dlp/postprocessor/*.py yt_dlp/utils/*.py yt_dlp/utils/jslib/*.py yt_dlp/extractor/youtube/jsc/_builtin/vendor/*.js)
+rm -f zip/yt_dlp/__main__.py
+(cd zip && zip -q ../yt-dlp.zip yt_dlp/*.py yt_dlp/compat/*.py yt_dlp/compat/urllib/*.py yt_dlp/dependencies/*.py yt_dlp/downloader/*.py yt_dlp/extractor/*.py yt_dlp/extractor/youtube/*.py yt_dlp/extractor/youtube/jsc/*.py yt_dlp/extractor/youtube/jsc/_builtin/*.py yt_dlp/extractor/youtube/jsc/_builtin/vendor/*.py yt_dlp/extractor/youtube/pot/*.py yt_dlp/extractor/youtube/pot/_builtin/*.py yt_dlp/networking/*.py yt_dlp/postprocessor/*.py yt_dlp/utils/*.py yt_dlp/utils/jslib/*.py yt_dlp/extractor/youtube/jsc/_builtin/vendor/*.js)
+rm -rf zip
+mkdir -p zip
+cp -pP yt_dlp/__main__.py zip/
+touch -t 200001010101 zip/__main__.py
+(cd zip && zip -q ../yt-dlp.zip __main__.py)
+echo '#!/usr/bin/env python3' > yt-dlp
+cat yt-dlp.zip >> yt-dlp
+rm yt-dlp.zip
+chmod a+x yt-dlp
+rm -rf zip
+COLUMNS=80 /usr/bin/env python3 yt_dlp/__main__.py --ignore-config --help | /usr/bin/env python3 devscripts/make_readme.py
+/usr/bin/env python3 devscripts/prepare_manpage.py yt-dlp.1.temp.md
+pandoc -s -f markdown-smart -t man yt-dlp.1.temp.md -o yt-dlp.1
+make: pandoc: No such file or directory
+make: *** [Makefile:154: yt-dlp.1] Error 127
+azamat@azamat-VMware20-1:~/Desktop/yt-dlp$ pip3 install yt-dlp --break-system-packages
+Defaulting to user installation because normal site-packages is not writeable
+Collecting yt-dlp
+  Downloading yt_dlp-2026.2.21-py3-none-any.whl.metadata (182 kB)
+Downloading yt_dlp-2026.2.21-py3-none-any.whl (3.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 1.7 MB/s eta 0:00:00
+Installing collected packages: yt-dlp
+Successfully installed yt-dlp-2026.2.21
+azamat@azamat-VMware20-1:~/Desktop/yt-dlp$ yt-dlp --version
+2026.02.21
+azamat@azamat-VMware20-1:~/Desktop/yt-dlp$ cd ~/Desktop
+git clone https://github.com/aristocratos/btop.git
+Cloning into 'btop'...
+remote: Enumerating objects: 8017, done.
+remote: Counting objects: 100% (2251/2251), done.
+remote: Compressing objects: 100% (178/178), done.
+remote: Total 8017 (delta 2162), reused 2073 (delta 2073), pack-reused 5766 (from 1)
+Receiving objects: 100% (8017/8017), 9.77 MiB | 143.00 KiB/s, done.
+Resolving deltas: 100% (5467/5467), done.
+azamat@azamat-VMware20-1:~/Desktop$ cd btop
+make
+ 
+ ██████╗ ████████╗ ██████╗ ██████╗
+ ██╔══██╗╚══██╔══╝██╔═══██╗██╔══██╗   ██╗    ██╗
+ ██████╔╝   ██║   ██║   ██║██████╔╝ ██████╗██████╗
+ ██╔══██╗   ██║   ██║   ██║██╔═══╝  ╚═██╔═╝╚═██╔═╝
+ ██████╔╝   ██║   ╚██████╔╝██║        ╚═╝    ╚═╝
+ ╚═════╝    ╚═╝    ╚═════╝ ╚═╝      Makefile v1.6
+PLATFORM     ?| Linux
+ARCH         ?| aarch64
+GPU_SUPPORT  :| false
+CXX          ?| g++ (15.2.0)
+THREADS      :| 4
+REQFLAGS     !| -std=c++23
+WARNFLAGS    :| -Wall -Wextra -pedantic
+OPTFLAGS     :| -O2 
+LDCXXFLAGS   :| -pthread -DFMT_HEADER_ONLY -D_GLIBCXX_ASSERTIONS -D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_DEBUG -D_FILE_OFFSET_BITS=64 -fexceptions -fstack-clash-protection  -fstack-protector 
+CXXFLAGS     +| $(REQFLAGS) $(LDCXXFLAGS) $(OPTFLAGS) $(WARNFLAGS) 
+LDFLAGS      +| $(LDCXXFLAGS) $(OPTFLAGS) $(WARNFLAGS) 
+
+Building btop++ (v1.4.6) Linux aarch64
+
+Command 'lowdown' not found: skipping generating man page btop.1
+Configuring obj/config.h
+Compiling src/btop_config.cpp
+Compiling src/btop_cli.cpp
+Compiling src/btop_draw.cpp
+Compiling src/btop.cpp
+7%   -> obj/btop_cli.o                (268KiB) (03s)
+Compiling src/btop_input.cpp
+15%  -> obj/btop_config.o             (672KiB) (06s)
+Compiling src/btop_log.cpp
+22%  -> obj/btop.o                    (768KiB) (07s)
+Compiling src/btop_menu.cpp
+30%  -> obj/btop_input.o              (624KiB) (05s)
+Compiling src/btop_shared.cpp
+37%  -> obj/btop_log.o                (312KiB) (03s)
+Compiling src/btop_theme.cpp
+45%  -> obj/btop_draw.o               (1.1MiB) (11s)
+Compiling src/btop_tools.cpp
+60%  -> obj/btop_shared.o             (568KiB) (05s)
+60%  -> obj/btop_menu.o               (904KiB) (07s)
+Compiling src/main.cpp
+Compiling src/linux/btop_collect.cpp
+67%  -> obj/main.o                    (4.0KiB) (00s)
+75%  -> obj/btop_theme.o              (644KiB) (06s)
+82%  -> obj/btop_tools.o              (608KiB) (06s)
+90%  -> obj/linux/btop_collect.o      (1.1MiB) (09s)
+
+Linking and optimizing binary...
+100% -> bin/btop                      (1.8MiB) (00s)
+
+Build complete in (25s)
+azamat@azamat-VMware20-1:~/Desktop/btop$ sudo make install
+btop
+Installing binary to: /usr/local/bin/btop
+Installing doc to: /usr/local/share/doc/btop
+Installing themes to: /usr/local/share/btop/themes
+Installing desktop entry to: /usr/local/share/applications/btop.desktop
+Installing PNG icon to: /usr/local/share/icons/hicolor/48x48/apps/btop.png
+Installing SVG icon to: /usr/local/share/icons/hicolor/scalable/apps/btop.svg
+azamat@azamat-VMware20-1:~/Desktop/btop$ 
+
